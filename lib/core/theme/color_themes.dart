@@ -8,6 +8,10 @@ class ColorTheme {
 
   static Color secondary = HexColor("#3c3c3c");
   static Color secondaryLight = HexColor("#979797");
+
+  static Color textBlack = const Color(0xff222222);
+  static Color textGrey = const Color(0xff94959b);
+  static Color textWhiteGrey = const Color(0xfff1f1f5);
 }
 
 class HexColor extends Color {
