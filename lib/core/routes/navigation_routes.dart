@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wikimsglow/features/login/presentation/pages/login_page.dart';
+import 'package:wikimsglow/features/others/presentation/pages/not_found.dart';
+import 'package:wikimsglow/features/others/presentation/pages/under_development.dart';
 
 class NavigationRoutes {
   static final NavigationRoutes _instance = NavigationRoutes._init();
@@ -12,14 +14,14 @@ class NavigationRoutes {
       case LoginPage.routeName:
         return MaterialPageRoute(builder: (_) => const LoginPage());
 
+      case UnderDevelopment.routeName:
+        return MaterialPageRoute(builder: (_) => const UnderDevelopment());
+
+      case NotFound.routeName:
+        return MaterialPageRoute(builder: (_) => const NotFound());
+
       default:
-        return MaterialPageRoute(builder: (_) {
-          return const Scaffold(
-            body: Center(
-              child: Text('Page not found :('),
-            ),
-          );
-        });
+        return MaterialPageRoute(builder: (_) => const NotFound());
     }
   }
 
