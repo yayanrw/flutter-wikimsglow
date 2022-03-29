@@ -3,14 +3,16 @@ import 'package:wikimsglow/core/theme/text_themes.dart';
 
 class PrimaryButton extends StatelessWidget {
   final Color buttonColor;
-  final String textValue;
   final Color textColor;
+  final String textValue;
+  final VoidCallback onPressed;
 
   const PrimaryButton(
       {Key? key,
       required this.buttonColor,
       required this.textColor,
-      required this.textValue})
+      required this.textValue,
+      required this.onPressed})
       : super(key: key);
 
   @override
@@ -27,7 +29,7 @@ class PrimaryButton extends StatelessWidget {
         child: Material(
           color: Colors.transparent,
           child: InkWell(
-            onTap: () {},
+            onTap: () => onPressed(),
             borderRadius: BorderRadius.circular(14.0),
             child: Center(
               child: Text(
