@@ -9,4 +9,7 @@ class Strings {
   static const password = 'Password';
   static const rememberMe = 'Remember me';
   static const loginToYourAccount = 'Login to your\naccount';
+  static const notFound = 'Page not found';
+  static const underDevelopment = 'Page under development';
+  static const goBack = 'Go Back!';
 }
