@@ -3,7 +3,10 @@ import 'package:wikimsglow/core/theme/color_themes.dart';
 import 'package:wikimsglow/core/theme/text_themes.dart';
 import 'package:wikimsglow/core/utils/strings.dart';
 import 'package:wikimsglow/core/widgets/button/primary_button.dart';
-import 'package:wikimsglow/core/widgets/checkbox/primary_checkbox.dart';
+import 'package:wikimsglow/features/login/presentation/widgets/dont_have_account.dart';
+import 'package:wikimsglow/features/login/presentation/widgets/email_text_form_field.dart';
+import 'package:wikimsglow/features/login/presentation/widgets/login_text.dart';
+import 'package:wikimsglow/features/login/presentation/widgets/remember_me_check_box.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -30,18 +33,18 @@ class _LoginPageState extends State<LoginPage> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.all(24),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(
                   height: 32,
                 ),
-                _loginText(),
+                const LoginText(),
                 const SizedBox(
                   height: 48,
                 ),
-                _emailTextFormField(),
+                const EmailTextFormField(),
                 const SizedBox(
                   height: 32,
                 ),
@@ -49,7 +52,7 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(
                   height: 32,
                 ),
-                _rememberMeCheckBox(),
+                const RememberMeCheckBox(),
                 const SizedBox(
                   height: 32,
                 ),
@@ -79,70 +82,9 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(
                   height: 50,
                 ),
-                _dontHaveAccount(),
+                const DontHaveAccount(),
               ],
             ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  Row _dontHaveAccount() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text(
-          Strings.dontHaveAccount,
-          style: textThemes(ColorTheme.textGrey, FontWeight.w500).bodyText1,
-        ),
-        TextButton(
-            onPressed: () => {},
-            child: Text(Strings.register,
-                style:
-                    textThemes(ColorTheme.primary, FontWeight.w500).bodyText1)),
-      ],
-    );
-  }
-
-  Row _rememberMeCheckBox() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        const PrimaryCheckbox(),
-        const SizedBox(
-          width: 12,
-        ),
-        Text(Strings.rememberMe,
-            style: textThemes(ColorTheme.textGrey, FontWeight.w500).bodyText1),
-      ],
-    );
-  }
-
-  Text _loginText() {
-    return Text(
-      Strings.loginToYourAccount,
-      style: textThemes(ColorTheme.primary, FontWeight.w700).headline4,
-    );
-  }
-
-  Container _emailTextFormField() {
-    return Container(
-      decoration: BoxDecoration(
-        color: ColorTheme.textWhiteGrey,
-        borderRadius: BorderRadius.circular(14.0),
-      ),
-      padding: const EdgeInsets.symmetric(
-        horizontal: 16,
-      ),
-      child: TextFormField(
-        keyboardType: TextInputType.emailAddress,
-        cursorColor: ColorTheme.primary,
-        decoration: InputDecoration(
-          hintText: Strings.email,
-          hintStyle: textThemes(ColorTheme.textGrey, FontWeight.w500).bodyText1,
-          border: const OutlineInputBorder(
-            borderSide: BorderSide.none,
           ),
         ),
       ),
