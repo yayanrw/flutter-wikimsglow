@@ -4,9 +4,8 @@ import 'package:wikimsglow/core/theme/text_themes.dart';
 import 'package:wikimsglow/core/utils/strings.dart';
 import 'package:wikimsglow/core/widgets/button/primary_button.dart';
 import 'package:wikimsglow/features/login/presentation/widgets/dont_have_account.dart';
-import 'package:wikimsglow/features/login/presentation/widgets/email_text_form_field.dart';
+import 'package:wikimsglow/features/login/presentation/widgets/forgot_password.dart';
 import 'package:wikimsglow/features/login/presentation/widgets/login_text.dart';
-import 'package:wikimsglow/features/login/presentation/widgets/remember_me_check_box.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -19,7 +18,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   bool _passwordVisible = false;
-  void togglePassword() {
+  void _togglePassword() {
     setState(() {
       _passwordVisible = !_passwordVisible;
     });
@@ -40,19 +39,19 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(
                   height: 32,
                 ),
-                const LoginText(),
+                loginText(),
                 const SizedBox(
                   height: 48,
                 ),
-                const EmailTextFormField(),
+                emailTextFormField(),
                 const SizedBox(
                   height: 32,
                 ),
-                _passwordTextFormField(),
+                passwordTextFormField(),
                 const SizedBox(
                   height: 32,
                 ),
-                const RememberMeCheckBox(),
+                forgotPassword(),
                 const SizedBox(
                   height: 32,
                 ),
@@ -74,8 +73,8 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(
                   height: 24,
                 ),
-                const PrimaryButton(
-                  buttonColor: Color(0xfffbfbfb),
+                PrimaryButton(
+                  buttonColor: ColorTheme.bgWhiteLight,
                   textValue: Strings.loginWithGoogle,
                   textColor: Colors.black,
                 ),
@@ -91,7 +90,7 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  Container _passwordTextFormField() {
+  Container passwordTextFormField() {
     return Container(
       decoration: BoxDecoration(
         color: ColorTheme.textWhiteGrey,
@@ -112,7 +111,7 @@ class _LoginPageState extends State<LoginPage> {
             icon: Icon(_passwordVisible
                 ? Icons.visibility_outlined
                 : Icons.visibility_off_outlined),
-            onPressed: togglePassword,
+            onPressed: _togglePassword,
           ),
           border: const OutlineInputBorder(
             borderSide: BorderSide.none,
@@ -120,5 +119,33 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
+  }
+
+  Container emailTextFormField() {
+    return Container(
+      decoration: BoxDecoration(
+        color: ColorTheme.textWhiteGrey,
+        borderRadius: BorderRadius.circular(14.0),
+      ),
+      padding: const EdgeInsets.symmetric(
+        horizontal: 16,
+      ),
+      child: TextFormField(
+        keyboardType: TextInputType.emailAddress,
+        cursorColor: ColorTheme.primary,
+        decoration: InputDecoration(
+          hintText: Strings.email,
+          hintStyle: textThemes(ColorTheme.textGrey, FontWeight.w500).bodyText1,
+          border: const OutlineInputBorder(
+            borderSide: BorderSide.none,
+          ),
+        ),
+      ),
+    );
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
   }
 }
