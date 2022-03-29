@@ -28,55 +28,57 @@ class _LoginPageState extends State<LoginPage> {
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(24.0, 40.0, 24.0, 0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _loginText(),
-              const SizedBox(
-                height: 48,
-              ),
-              _emailTextFormField(),
-              const SizedBox(
-                height: 32,
-              ),
-              _passwordTextFormField(),
-              const SizedBox(
-                height: 32,
-              ),
-              _rememberMeCheckBox(),
-              const SizedBox(
-                height: 32,
-              ),
-              PrimaryButton(
-                buttonColor: ColorTheme.primary,
-                textValue: Strings.login,
-                textColor: Colors.white,
-              ),
-              const SizedBox(
-                height: 24,
-              ),
-              Center(
-                child: Text(
-                  Strings.or,
-                  style: textThemes(ColorTheme.textGrey, FontWeight.w500)
-                      .bodyText1,
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(24.0, 40.0, 24.0, 0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                _loginText(),
+                const SizedBox(
+                  height: 48,
                 ),
-              ),
-              const SizedBox(
-                height: 24,
-              ),
-              const PrimaryButton(
-                buttonColor: Color(0xfffbfbfb),
-                textValue: Strings.loginWithGoogle,
-                textColor: Colors.black,
-              ),
-              const SizedBox(
-                height: 50,
-              ),
-              _dontHaveAccount(),
-            ],
+                _emailTextFormField(),
+                const SizedBox(
+                  height: 32,
+                ),
+                _passwordTextFormField(),
+                const SizedBox(
+                  height: 32,
+                ),
+                _rememberMeCheckBox(),
+                const SizedBox(
+                  height: 32,
+                ),
+                PrimaryButton(
+                  buttonColor: ColorTheme.primary,
+                  textValue: Strings.login,
+                  textColor: Colors.white,
+                ),
+                const SizedBox(
+                  height: 24,
+                ),
+                Center(
+                  child: Text(
+                    Strings.or,
+                    style: textThemes(ColorTheme.textGrey, FontWeight.w500)
+                        .bodyText1,
+                  ),
+                ),
+                const SizedBox(
+                  height: 24,
+                ),
+                const PrimaryButton(
+                  buttonColor: Color(0xfffbfbfb),
+                  textValue: Strings.loginWithGoogle,
+                  textColor: Colors.black,
+                ),
+                const SizedBox(
+                  height: 50,
+                ),
+                _dontHaveAccount(),
+              ],
+            ),
           ),
         ),
       ),
