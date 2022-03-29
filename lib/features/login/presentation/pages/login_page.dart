@@ -74,7 +74,7 @@ class _LoginPageState extends State<LoginPage> {
                   height: 24,
                 ),
                 PrimaryButton(
-                  buttonColor: ColorTheme.bgWhiteLight,
+                  buttonColor: ColorTheme.bgWhiteSmooth,
                   textValue: Strings.loginWithGoogle,
                   textColor: Colors.black,
                 ),
