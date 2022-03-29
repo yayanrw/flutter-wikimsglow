@@ -12,6 +12,7 @@ class ColorTheme {
   static Color textBlack = const Color(0xff222222);
   static Color textGrey = const Color(0xff94959b);
   static Color textWhiteGrey = const Color(0xfff1f1f5);
+  static Color bgWhiteLight = const Color(0xfffbfbfb);
 }
 
 class HexColor extends Color {
