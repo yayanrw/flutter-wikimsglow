@@ -4,7 +4,7 @@ class Strings {
   static const dontHaveAccount = 'Don\'t have an account?';
   static const loginWithGoogle = 'Login with Google';
   static const or = 'OR';
-  static const forgotPassword = 'Forgot Password';
+  static const forgotPassword = 'Forgot Password?';
   static const login = 'Login';
   static const password = 'Password';
   static const rememberMe = 'Remember me';
