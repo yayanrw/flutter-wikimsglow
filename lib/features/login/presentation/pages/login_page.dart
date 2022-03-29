@@ -6,6 +6,7 @@ import 'package:wikimsglow/core/widgets/button/primary_button.dart';
 import 'package:wikimsglow/features/login/presentation/widgets/dont_have_account.dart';
 import 'package:wikimsglow/features/login/presentation/widgets/forgot_password.dart';
 import 'package:wikimsglow/features/login/presentation/widgets/login_text.dart';
+import 'package:wikimsglow/features/others/presentation/pages/under_development.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -51,7 +52,7 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(
                   height: 32,
                 ),
-                forgotPassword(),
+                forgotPassword(context),
                 const SizedBox(
                   height: 32,
                 ),
@@ -59,6 +60,7 @@ class _LoginPageState extends State<LoginPage> {
                   buttonColor: ColorTheme.primary,
                   textValue: Strings.login,
                   textColor: Colors.white,
+                  onPressed: () {},
                 ),
                 const SizedBox(
                   height: 24,
@@ -77,11 +79,13 @@ class _LoginPageState extends State<LoginPage> {
                   buttonColor: ColorTheme.bgWhiteSmooth,
                   textValue: Strings.loginWithGoogle,
                   textColor: Colors.black,
+                  onPressed: () =>
+                      Navigator.pushNamed(context, UnderDevelopment.routeName),
                 ),
                 const SizedBox(
                   height: 50,
                 ),
-                const DontHaveAccount(),
+                dontHaveAccount(context),
               ],
             ),
           ),
