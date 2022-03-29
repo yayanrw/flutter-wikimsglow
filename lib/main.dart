@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:wikimsglow/core/config/apps_config.dart';
+import 'package:wikimsglow/core/routes/navigation_routes.dart';
+import 'package:wikimsglow/core/routes/route_observer.dart';
+import 'package:wikimsglow/core/theme/themes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,11 +15,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: AppsConfig.appTitle,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
+        title: AppsConfig.appTitle,
+        theme: themes(),
+        initialRoute: AppsConfig.initialRoute,
+        navigatorObservers: [routeObserver],
+        onGenerateRoute: NavigationRoutes.instance.onGenerateRoute);
   }
 }
