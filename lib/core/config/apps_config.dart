@@ -1,3 +1,3 @@
 class AppsConfig {
-  static const appName = 'WIKIMSGLOW';
+  static const appTitle = 'WIKIMSGLOW';
 }
