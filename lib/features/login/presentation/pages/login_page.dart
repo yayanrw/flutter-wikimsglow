@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:wikimsglow/core/theme/color_themes.dart';
 import 'package:wikimsglow/core/theme/text_themes.dart';
 import 'package:wikimsglow/core/utils/strings.dart';
@@ -6,7 +7,8 @@ import 'package:wikimsglow/core/widgets/button/primary_button.dart';
 import 'package:wikimsglow/features/login/presentation/widgets/dont_have_account.dart';
 import 'package:wikimsglow/features/login/presentation/widgets/forgot_password.dart';
 import 'package:wikimsglow/features/login/presentation/widgets/login_text.dart';
-import 'package:wikimsglow/features/others/presentation/pages/under_development.dart';
+import 'package:wikimsglow/features/login/presentation/widgets/login_with_google_button.dart';
+import 'package:wikimsglow/features/login/presentation/widgets/or_text.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -56,32 +58,15 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(
                   height: 32,
                 ),
-                PrimaryButton(
-                  buttonColor: ColorTheme.primary,
-                  textValue: Strings.login,
-                  textColor: Colors.white,
-                  onPressed: () {},
-                ),
+                loginButton(context),
                 const SizedBox(
                   height: 24,
                 ),
-                Center(
-                  child: Text(
-                    Strings.or,
-                    style: textThemes(ColorTheme.textGrey, FontWeight.w500)
-                        .bodyText1,
-                  ),
-                ),
+                orText(),
                 const SizedBox(
                   height: 24,
                 ),
-                PrimaryButton(
-                  buttonColor: ColorTheme.bgWhiteSmooth,
-                  textValue: Strings.loginWithGoogle,
-                  textColor: Colors.black,
-                  onPressed: () =>
-                      Navigator.pushNamed(context, UnderDevelopment.routeName),
-                ),
+                loginWithGoogleButton(context),
                 const SizedBox(
                   height: 50,
                 ),
@@ -94,7 +79,25 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  Container passwordTextFormField() {
+  Widget loginButton(BuildContext context) {
+    return PrimaryButton(
+      buttonColor: ColorTheme.primary,
+      textValue: Strings.login,
+      textColor: Colors.white,
+      onPressed: () {
+        showDialog(
+            context: context,
+            builder: (context) {
+              return LoadingAnimationWidget.waveDots(
+                color: Colors.white,
+                size: 100,
+              );
+            });
+      },
+    );
+  }
+
+  Widget passwordTextFormField() {
     return Container(
       decoration: BoxDecoration(
         color: ColorTheme.textWhiteGrey,
@@ -125,7 +128,7 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  Container emailTextFormField() {
+  Widget emailTextFormField() {
     return Container(
       decoration: BoxDecoration(
         color: ColorTheme.textWhiteGrey,

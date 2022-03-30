@@ -4,7 +4,7 @@ import 'package:wikimsglow/core/theme/text_themes.dart';
 import 'package:wikimsglow/core/utils/strings.dart';
 import 'package:wikimsglow/features/others/presentation/pages/under_development.dart';
 
-Row dontHaveAccount(BuildContext context) {
+Widget dontHaveAccount(BuildContext context) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.center,
     children: [

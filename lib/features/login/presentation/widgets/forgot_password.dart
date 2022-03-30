@@ -4,7 +4,7 @@ import 'package:wikimsglow/core/theme/text_themes.dart';
 import 'package:wikimsglow/core/utils/strings.dart';
 import 'package:wikimsglow/features/others/presentation/pages/under_development.dart';
 
-TextButton forgotPassword(BuildContext context) {
+Widget forgotPassword(BuildContext context) {
   return TextButton(
       onPressed: () => Navigator.pushNamed(context, UnderDevelopment.routeName),
       child: Text(Strings.forgotPassword,
