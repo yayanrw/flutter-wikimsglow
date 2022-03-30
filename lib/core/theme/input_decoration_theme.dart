@@ -23,7 +23,7 @@ InputDecoration searchInputDecoration() {
     fillColor: ColorTheme.textWhiteGrey,
     contentPadding: const EdgeInsets.symmetric(vertical: 16, horizontal: 32),
     hintStyle: textThemes(ColorTheme.textGrey, FontWeight.w500).bodyText1,
-    hintText: Strings.search,
+    hintText: Strings.searchProducts,
     prefixIcon: Padding(
       padding: const EdgeInsets.only(left: 16),
       child: Icon(Icons.search, color: ColorTheme.primary),
