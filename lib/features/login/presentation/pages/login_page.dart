@@ -4,6 +4,7 @@ import 'package:wikimsglow/core/theme/color_themes.dart';
 import 'package:wikimsglow/core/theme/text_themes.dart';
 import 'package:wikimsglow/core/utils/strings.dart';
 import 'package:wikimsglow/core/widgets/button/primary_button.dart';
+import 'package:wikimsglow/features/home/presentation/pages/home_page.dart';
 import 'package:wikimsglow/features/login/presentation/widgets/dont_have_account.dart';
 import 'package:wikimsglow/features/login/presentation/widgets/forgot_password.dart';
 import 'package:wikimsglow/features/login/presentation/widgets/login_text.dart';
@@ -21,6 +22,8 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   bool _passwordVisible = false;
+  final _email = TextEditingController();
+  final _password = TextEditingController();
   void _togglePassword() {
     setState(() {
       _passwordVisible = !_passwordVisible;
@@ -31,7 +34,6 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: true,
-      backgroundColor: Colors.white,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -52,7 +54,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 passwordTextFormField(),
                 const SizedBox(
-                  height: 32,
+                  height: 8,
                 ),
                 forgotPassword(context),
                 const SizedBox(
@@ -84,16 +86,31 @@ class _LoginPageState extends State<LoginPage> {
       buttonColor: ColorTheme.primary,
       textValue: Strings.login,
       textColor: Colors.white,
-      onPressed: () {
-        showDialog(
-            context: context,
-            builder: (context) {
-              return LoadingAnimationWidget.waveDots(
-                color: Colors.white,
-                size: 100,
-              );
-            });
-      },
+      onPressed: () => Navigator.pushNamed(context, HomePage.routeName),
+    );
+  }
+
+  Widget emailTextFormField() {
+    return Container(
+      decoration: BoxDecoration(
+        color: ColorTheme.textWhiteGrey,
+        borderRadius: BorderRadius.circular(14.0),
+      ),
+      padding: const EdgeInsets.symmetric(
+        horizontal: 16,
+      ),
+      child: TextFormField(
+        controller: _email,
+        keyboardType: TextInputType.emailAddress,
+        cursorColor: ColorTheme.primary,
+        decoration: InputDecoration(
+          hintText: Strings.email,
+          hintStyle: textThemes(ColorTheme.textGrey, FontWeight.w500).bodyText1,
+          border: const OutlineInputBorder(
+            borderSide: BorderSide.none,
+          ),
+        ),
+      ),
     );
   }
 
@@ -107,6 +124,7 @@ class _LoginPageState extends State<LoginPage> {
         horizontal: 16,
       ),
       child: TextFormField(
+        controller: _password,
         cursorColor: ColorTheme.primary,
         obscureText: !_passwordVisible,
         decoration: InputDecoration(
@@ -128,31 +146,11 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  Widget emailTextFormField() {
-    return Container(
-      decoration: BoxDecoration(
-        color: ColorTheme.textWhiteGrey,
-        borderRadius: BorderRadius.circular(14.0),
-      ),
-      padding: const EdgeInsets.symmetric(
-        horizontal: 16,
-      ),
-      child: TextFormField(
-        keyboardType: TextInputType.emailAddress,
-        cursorColor: ColorTheme.primary,
-        decoration: InputDecoration(
-          hintText: Strings.email,
-          hintStyle: textThemes(ColorTheme.textGrey, FontWeight.w500).bodyText1,
-          border: const OutlineInputBorder(
-            borderSide: BorderSide.none,
-          ),
-        ),
-      ),
-    );
-  }
-
   @override
   void dispose() {
+    _email.dispose();
+    _password.dispose();
+    _passwordVisible = false;
     super.dispose();
   }
 }
