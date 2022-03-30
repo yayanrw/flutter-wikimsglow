@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wikimsglow/core/config/apps_config.dart';
 import 'package:wikimsglow/core/theme/text_themes.dart';
 
 class PrimaryButton extends StatelessWidget {
@@ -18,23 +19,25 @@ class PrimaryButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      borderRadius: BorderRadius.circular(14.0),
+      borderRadius: BorderRadius.circular(AppsConfig.defaultRadius),
       elevation: 0,
       child: Container(
-        height: 56,
         decoration: BoxDecoration(
           color: buttonColor,
-          borderRadius: BorderRadius.circular(14.0),
+          borderRadius: BorderRadius.circular(AppsConfig.defaultRadius),
         ),
         child: Material(
           color: Colors.transparent,
           child: InkWell(
             onTap: () => onPressed(),
-            borderRadius: BorderRadius.circular(14.0),
+            borderRadius: BorderRadius.circular(AppsConfig.defaultRadius),
             child: Center(
-              child: Text(
-                textValue,
-                style: textThemes(textColor, FontWeight.w500).headline5,
+              child: Padding(
+                padding: const EdgeInsets.all(AppsConfig.defaultPadding / 2),
+                child: Text(
+                  textValue,
+                  style: textThemes(textColor, FontWeight.w500).headline5,
+                ),
               ),
             ),
           ),
