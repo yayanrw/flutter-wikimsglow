@@ -18,4 +18,5 @@ class Strings {
   static const search = 'Search';
   static const wiki = 'wiki';
   static const msglow = 'msglow';
+  static const categories = 'Categories';
 }
