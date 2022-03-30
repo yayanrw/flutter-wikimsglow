@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wikimsglow/core/config/apps_config.dart';
 import 'package:wikimsglow/core/theme/color_themes.dart';
 import 'package:wikimsglow/core/theme/text_themes.dart';
 
@@ -17,7 +18,8 @@ class SectionTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: const EdgeInsets.fromLTRB(AppsConfig.defaultPadding,
+          AppsConfig.defaultPadding, AppsConfig.defaultPadding, 0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
