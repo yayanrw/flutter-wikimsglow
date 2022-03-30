@@ -8,9 +8,7 @@ ThemeData themes() {
   return ThemeData(
       scaffoldBackgroundColor: Colors.white,
       primaryColor: ColorTheme.primary,
-      primaryTextTheme: const TextTheme(
-        headline6: TextStyle(color: Colors.black),
-      ),
+      highlightColor: ColorTheme.primarySmooth,
       textSelectionTheme: textSelectionThemeData(),
       appBarTheme: appBarTheme(),
       fontFamily: AppsConfig.fontFamily,
