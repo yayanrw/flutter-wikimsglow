@@ -15,4 +15,7 @@ class Strings {
   static const fieldRequired = 'This field is required';
   static const fieldTooShort = 'This field is too short';
   static const invalidEmail = 'This is not a valid email';
+  static const search = 'Search';
+  static const wiki = 'wiki';
+  static const msglow = 'msglow';
 }
