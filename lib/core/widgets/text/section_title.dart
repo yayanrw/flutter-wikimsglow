@@ -22,6 +22,7 @@ class SectionTitle extends StatelessWidget {
           AppsConfig.defaultPadding, AppsConfig.defaultPadding, 0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           Text(
             text,
