@@ -101,13 +101,13 @@ class _LoginPageState extends State<LoginPage> {
   Widget emailTextFormField() {
     return TextFormField(
       controller: _email,
-      validator: (value) {
-        return Validations.isEmpty(value!)
-            ? Strings.fieldRequired
-            : Validations.isValidEmail(value)
-                ? null
-                : Strings.invalidEmail;
-      },
+      // validator: (value) {
+      //   return Validations.isEmpty(value!)
+      //       ? Strings.fieldRequired
+      //       : Validations.isValidEmail(value)
+      //           ? null
+      //           : Strings.invalidEmail;
+      // },
       keyboardType: TextInputType.emailAddress,
       cursorColor: ColorTheme.primary,
       decoration: emailInputDecoration(),
@@ -117,13 +117,13 @@ class _LoginPageState extends State<LoginPage> {
   Widget passwordTextFormField() {
     return TextFormField(
       controller: _password,
-      validator: (value) {
-        return Validations.isEmpty(value!)
-            ? Strings.fieldRequired
-            : Validations.isLengthGreaterThan(value, 6)
-                ? null
-                : Strings.fieldTooShort;
-      },
+      // validator: (value) {
+      //   return Validations.isEmpty(value!)
+      //       ? Strings.fieldRequired
+      //       : Validations.isLengthGreaterThan(value, 6)
+      //           ? null
+      //           : Strings.fieldTooShort;
+      // },
       cursorColor: ColorTheme.primary,
       obscureText: !_passwordVisible,
       decoration:
