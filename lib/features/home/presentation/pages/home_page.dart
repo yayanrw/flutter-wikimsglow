@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:wikimsglow/core/theme/text_themes.dart';
+import 'package:wikimsglow/core/utils/strings.dart';
+import 'package:wikimsglow/features/home/presentation/widgets/app_bar_home_page.dart';
+import 'package:wikimsglow/features/home/presentation/widgets/search_text_form_field.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -9,24 +12,14 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        centerTitle: true,
-        title: RichText(
-          text: TextSpan(
-            text: 'wiki',
-            style: textThemes(Colors.black, FontWeight.w400).headline4,
-            children: [
-              TextSpan(
-                  text: 'msglow',
-                  style: textThemes(Colors.black, FontWeight.w900).headline4),
-            ],
-          ),
-        ),
-      ),
+      appBar: appBarHome(),
       body: SafeArea(
           child: SingleChildScrollView(
-        child: Text('Home Page'),
+        child: Column(
+          children: [
+            searchTextFormField(),
+          ],
+        ),
       )),
     );
   }
