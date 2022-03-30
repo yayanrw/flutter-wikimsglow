@@ -6,7 +6,7 @@ AppBarTheme appBarTheme() {
   return AppBarTheme(
     elevation: 0,
     systemOverlayStyle: SystemUiOverlayStyle.light,
-    iconTheme: const IconThemeData(color: Colors.white),
-    backgroundColor: ColorTheme.primary,
+    iconTheme: IconThemeData(color: ColorTheme.primary),
+    backgroundColor: Colors.white,
   );
 }
