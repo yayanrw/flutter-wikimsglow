@@ -12,4 +12,7 @@ class Strings {
   static const notFound = 'Page not found';
   static const underDevelopment = 'Page under development';
   static const goBack = 'Go Back!';
+  static const fieldRequired = 'This field is required';
+  static const fieldTooShort = 'This field is too short';
+  static const invalidEmail = 'This is not a valid email';
 }
