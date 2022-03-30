@@ -16,7 +16,9 @@ class Strings {
   static const fieldTooShort = 'This field is too short';
   static const invalidEmail = 'This is not a valid email';
   static const search = 'Search';
+  static const searchProducts = 'Search products...';
   static const wiki = 'wiki';
   static const msglow = 'msglow';
   static const categories = 'Categories';
+  static const ourProducts = 'Our Products';
 }
