@@ -4,16 +4,17 @@ import 'package:wikimsglow/core/theme/color_themes.dart';
 import 'package:wikimsglow/core/theme/text_themes.dart';
 
 class ProductCard extends StatelessWidget {
-  const ProductCard({
-    Key? key,
-    required this.image,
-    required this.title,
-    required this.press,
-    required this.bgColor,
-  }) : super(key: key);
+  const ProductCard(
+      {Key? key,
+      required this.image,
+      required this.title,
+      required this.press,
+      required this.isFirstIndex,
+      required this.isLastIndex})
+      : super(key: key);
   final String image, title;
   final VoidCallback press;
-  final Color bgColor;
+  final bool isFirstIndex, isLastIndex;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,11 @@ class ProductCard extends StatelessWidget {
       onTap: press,
       child: Container(
         width: 154,
-        padding: const EdgeInsets.all(AppsConfig.defaultPadding / 2),
+        padding: isFirstIndex
+            ? const EdgeInsets.only(left: AppsConfig.defaultPadding)
+            : (isLastIndex
+                ? const EdgeInsets.only(right: AppsConfig.defaultPadding)
+                : EdgeInsets.zero),
         decoration: const BoxDecoration(
           color: Colors.white,
           borderRadius:
@@ -31,20 +36,24 @@ class ProductCard extends StatelessWidget {
           children: [
             Container(
               width: double.infinity,
-              decoration: BoxDecoration(
-                color: bgColor,
-                borderRadius: const BorderRadius.all(
-                    Radius.circular(AppsConfig.defaultRadius)),
+              decoration: const BoxDecoration(
+                borderRadius:
+                    BorderRadius.all(Radius.circular(AppsConfig.defaultRadius)),
               ),
-              child: Image.asset(
-                image,
-                height: 132,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(AppsConfig.defaultRadius),
+                child: Image.asset(
+                  image,
+                  height: 132,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
             const SizedBox(height: AppsConfig.defaultPadding / 2),
             Expanded(
               child: Text(
                 title,
+                maxLines: 2,
                 style: textThemes(ColorTheme.textBlack).subtitle2,
               ),
             )
