@@ -4,25 +4,25 @@ class Category {
   Category({required this.icon, required this.title});
 }
 
-List<Category> demo_categories = [
+List<Category> demoCategories = [
   Category(
-    icon: "assets/icons/dress.svg",
+    icon: "assets/icons/skincare.png",
     title: "Skincare",
   ),
   Category(
-    icon: "assets/icons/shirt.svg",
-    title: "Bodycare",
+    icon: "assets/icons/formen.png",
+    title: "For Men",
   ),
   Category(
-    icon: "assets/icons/pants.svg",
+    icon: "assets/icons/msslim.png",
     title: "MS Slim",
   ),
   Category(
-    icon: "assets/icons/Tshirt.svg",
+    icon: "assets/icons/cosmetics.png",
     title: "Cosmetics",
   ),
   Category(
-    icon: "assets/icons/Tshirt.svg",
+    icon: "assets/icons/beauty_tools.png",
     title: "Beauty Tools",
   ),
 ];
