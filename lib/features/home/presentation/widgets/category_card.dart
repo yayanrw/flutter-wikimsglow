@@ -27,12 +27,14 @@ class CategoryCard extends StatelessWidget {
               : EdgeInsets.zero),
       child: OutlinedButton(
         onPressed: press,
-        style: OutlinedButton.styleFrom(
-          shape: const RoundedRectangleBorder(
-            borderRadius:
-                BorderRadius.all(Radius.circular(AppsConfig.defaultRadius)),
-          ),
-        ),
+        style: ButtonStyle(
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+                    borderRadius:
+                        BorderRadius.circular(AppsConfig.defaultRadius),
+                    side: BorderSide(color: ColorTheme.primary))),
+            backgroundColor: MaterialStateProperty.all(
+                ColorTheme.primarySmooth.withOpacity(0.5))),
         child: Padding(
           padding: const EdgeInsets.all(AppsConfig.defaultPadding / 2),
           child: Column(
