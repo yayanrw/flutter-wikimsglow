@@ -17,6 +17,24 @@ InputDecoration emailInputDecoration() {
   );
 }
 
+InputDecoration searchInputDecoration() {
+  return InputDecoration(
+    filled: true,
+    fillColor: ColorTheme.textWhiteGrey,
+    contentPadding: const EdgeInsets.symmetric(vertical: 16, horizontal: 32),
+    hintStyle: textThemes(ColorTheme.textGrey, FontWeight.w500).bodyText1,
+    hintText: Strings.search,
+    prefixIcon: Padding(
+      padding: const EdgeInsets.only(left: 16),
+      child: Icon(Icons.search, color: ColorTheme.primary),
+    ),
+    border: OutlineInputBorder(
+      borderSide: BorderSide.none,
+      borderRadius: BorderRadius.circular(14.0),
+    ),
+  );
+}
+
 InputDecoration passwordInputDecoration(
     bool _passwordVisible, VoidCallback _togglePasswordVisibility) {
   return InputDecoration(
