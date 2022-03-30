@@ -3,4 +3,5 @@ class AppsConfig {
   static const fontFamily = 'Poppins';
   static const initialRoute = '/login';
   static const defaultPadding = 16.0;
+  static const defaultRadius = 12.0;
 }
