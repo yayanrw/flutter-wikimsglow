@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:wikimsglow/core/theme/color_themes.dart';
-import 'package:wikimsglow/core/theme/text_themes.dart';
+import 'package:wikimsglow/core/theme/input_decoration_theme.dart';
 import 'package:wikimsglow/core/utils/strings.dart';
+import 'package:wikimsglow/core/utils/validations.dart';
 import 'package:wikimsglow/core/widgets/button/primary_button.dart';
 import 'package:wikimsglow/features/home/presentation/pages/home_page.dart';
 import 'package:wikimsglow/features/login/presentation/widgets/dont_have_account.dart';
@@ -21,10 +21,11 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final _formKey = GlobalKey<FormState>();
   bool _passwordVisible = false;
   final _email = TextEditingController();
   final _password = TextEditingController();
-  void _togglePassword() {
+  void _togglePasswordVisibility() {
     setState(() {
       _passwordVisible = !_passwordVisible;
     });
@@ -38,42 +39,45 @@ class _LoginPageState extends State<LoginPage> {
         child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(24),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(
-                  height: 32,
-                ),
-                loginText(),
-                const SizedBox(
-                  height: 48,
-                ),
-                emailTextFormField(),
-                const SizedBox(
-                  height: 32,
-                ),
-                passwordTextFormField(),
-                const SizedBox(
-                  height: 8,
-                ),
-                forgotPassword(context),
-                const SizedBox(
-                  height: 32,
-                ),
-                loginButton(context),
-                const SizedBox(
-                  height: 24,
-                ),
-                orText(),
-                const SizedBox(
-                  height: 24,
-                ),
-                loginWithGoogleButton(context),
-                const SizedBox(
-                  height: 50,
-                ),
-                dontHaveAccount(context),
-              ],
+            child: Form(
+              key: _formKey,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(
+                    height: 32,
+                  ),
+                  loginText(),
+                  const SizedBox(
+                    height: 48,
+                  ),
+                  emailTextFormField(),
+                  const SizedBox(
+                    height: 32,
+                  ),
+                  passwordTextFormField(),
+                  const SizedBox(
+                    height: 8,
+                  ),
+                  forgotPassword(context),
+                  const SizedBox(
+                    height: 32,
+                  ),
+                  loginButton(context),
+                  const SizedBox(
+                    height: 24,
+                  ),
+                  orText(),
+                  const SizedBox(
+                    height: 24,
+                  ),
+                  loginWithGoogleButton(context),
+                  const SizedBox(
+                    height: 50,
+                  ),
+                  dontHaveAccount(context),
+                ],
+              ),
             ),
           ),
         ),
@@ -86,68 +90,50 @@ class _LoginPageState extends State<LoginPage> {
       buttonColor: ColorTheme.primary,
       textValue: Strings.login,
       textColor: Colors.white,
-      onPressed: () => Navigator.pushNamed(context, HomePage.routeName),
+      onPressed: () {
+        if (_formKey.currentState!.validate()) {
+          Navigator.pushNamed(context, HomePage.routeName);
+        }
+      },
     );
   }
 
   Widget emailTextFormField() {
-    return Container(
-      decoration: BoxDecoration(
-        color: ColorTheme.textWhiteGrey,
-        borderRadius: BorderRadius.circular(14.0),
-      ),
-      padding: const EdgeInsets.symmetric(
-        horizontal: 16,
-      ),
-      child: TextFormField(
-        controller: _email,
-        keyboardType: TextInputType.emailAddress,
-        cursorColor: ColorTheme.primary,
-        decoration: InputDecoration(
-          hintText: Strings.email,
-          hintStyle: textThemes(ColorTheme.textGrey, FontWeight.w500).bodyText1,
-          border: const OutlineInputBorder(
-            borderSide: BorderSide.none,
-          ),
-        ),
-      ),
+    return TextFormField(
+      controller: _email,
+      validator: (value) {
+        return Validations.isEmpty(value!)
+            ? Strings.fieldRequired
+            : Validations.isValidEmail(value)
+                ? null
+                : Strings.invalidEmail;
+      },
+      keyboardType: TextInputType.emailAddress,
+      cursorColor: ColorTheme.primary,
+      decoration: emailInputDecoration(),
     );
   }
 
   Widget passwordTextFormField() {
-    return Container(
-      decoration: BoxDecoration(
-        color: ColorTheme.textWhiteGrey,
-        borderRadius: BorderRadius.circular(14.0),
-      ),
-      padding: const EdgeInsets.symmetric(
-        horizontal: 16,
-      ),
-      child: TextFormField(
-        controller: _password,
-        cursorColor: ColorTheme.primary,
-        obscureText: !_passwordVisible,
-        decoration: InputDecoration(
-          hintText: Strings.password,
-          hintStyle: textThemes(ColorTheme.textGrey, FontWeight.w500).bodyText1,
-          suffixIcon: IconButton(
-            color: ColorTheme.textGrey,
-            splashRadius: 1,
-            icon: Icon(_passwordVisible
-                ? Icons.visibility_outlined
-                : Icons.visibility_off_outlined),
-            onPressed: _togglePassword,
-          ),
-          border: const OutlineInputBorder(
-            borderSide: BorderSide.none,
-          ),
-        ),
-      ),
+    return TextFormField(
+      controller: _password,
+      validator: (value) {
+        return Validations.isEmpty(value!)
+            ? Strings.fieldRequired
+            : Validations.isLengthGreaterThan(value, 6)
+                ? null
+                : Strings.fieldTooShort;
+      },
+      cursorColor: ColorTheme.primary,
+      obscureText: !_passwordVisible,
+      decoration:
+          passwordInputDecoration(_passwordVisible, _togglePasswordVisibility),
     );
   }
 
   @override
   void dispose() {
+    _formKey.currentState!.dispose();
     _email.dispose();
     _password.dispose();
     _passwordVisible = false;
