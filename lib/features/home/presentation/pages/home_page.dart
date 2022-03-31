@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:wikimsglow/core/theme/color_themes.dart';
 import 'package:wikimsglow/core/utils/strings.dart';
 import 'package:wikimsglow/core/widgets/text/section_title.dart';
+import 'package:wikimsglow/features/home/presentation/widgets/best_seller_list.dart';
 import 'package:wikimsglow/features/home/presentation/widgets/category_list.dart';
 import 'package:wikimsglow/features/home/presentation/widgets/home_page_appbar.dart';
 import 'package:wikimsglow/features/home/presentation/widgets/explore_text.dart';
@@ -33,22 +35,30 @@ class HomePage extends StatelessWidget {
                     Navigator.pushNamed(context, UnderDevelopment.routeName),
               ),
               const CategoryList(),
+              Divider(
+                color: ColorTheme.textWhiteGrey,
+                thickness: 8,
+                height: 24,
+              ),
               SectionTitle(
                 text: Strings.newArrivals,
                 isMoreable: false,
                 press: () => {},
               ),
-              NewArrivalList(),
+              const NewArrivalList(),
               SectionTitle(
                 text: Strings.bestSellers,
                 isMoreable: false,
                 press: () => {},
               ),
+              const BestSellerList(),
               SectionTitle(
                 text: Strings.ourProducts,
                 isMoreable: false,
                 press: () => {},
               ),
+              const BestSellerList(),
+              const SizedBox(height: 100),
             ],
           ),
         ),
