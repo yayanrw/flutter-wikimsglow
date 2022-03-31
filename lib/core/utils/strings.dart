@@ -27,4 +27,6 @@ class Strings {
   static const newArrivals = 'New Arrivals';
   static const bestSellers = 'Best Sellers';
   static const seeMore = 'See more';
+  static const emailDummy = 'you@email.com';
+  static const passwordDummy = '********';
 }
