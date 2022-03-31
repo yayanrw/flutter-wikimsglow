@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wikimsglow/core/config/apps_config.dart';
 import 'package:wikimsglow/features/home/domain/entities/product.dart';
+import 'package:wikimsglow/features/others/presentation/pages/under_development.dart';
 
 import 'product_card.dart';
 
@@ -33,7 +34,8 @@ class NewArrivalList extends StatelessWidget {
                 return ProductCard(
                   title: demoNewArrivals[index].title,
                   image: demoNewArrivals[index].image,
-                  press: () {},
+                  press: () =>
+                      Navigator.pushNamed(context, UnderDevelopment.routeName),
                   isFirstIndex: isFirstIndex,
                   isLastIndex: isLastIndex,
                 );
