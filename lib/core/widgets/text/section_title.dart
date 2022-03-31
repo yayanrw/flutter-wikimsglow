@@ -19,7 +19,7 @@ class SectionTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(AppsConfig.defaultPadding,
-          AppsConfig.defaultPadding, AppsConfig.defaultPadding, 0),
+          AppsConfig.defaultPadding / 2, AppsConfig.defaultPadding, 0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.end,
