@@ -80,7 +80,7 @@ InputDecoration passwordInputDecoration(
 InputDecoration searchInputDecoration() {
   return InputDecoration(
     filled: true,
-    fillColor: ColorTheme.textWhiteGrey,
+    fillColor: ColorTheme.white,
     contentPadding: const EdgeInsets.all(AppsConfig.defaultPadding),
     hintStyle: textThemes(ColorTheme.textGrey, FontWeight.w500).bodyText1,
     hintText: Strings.searchProducts,
@@ -88,7 +88,7 @@ InputDecoration searchInputDecoration() {
       padding: const EdgeInsets.only(
           left: AppsConfig.defaultPadding,
           right: AppsConfig.defaultPadding / 2),
-      child: Icon(Icons.search, color: ColorTheme.primary.withOpacity(0.5)),
+      child: Icon(Icons.search, color: ColorTheme.primary),
     ),
     border: OutlineInputBorder(
       borderSide: BorderSide.none,
