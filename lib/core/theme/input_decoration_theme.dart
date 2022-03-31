@@ -57,7 +57,7 @@ InputDecoration searchInputDecoration() {
       padding: const EdgeInsets.only(
           left: AppsConfig.defaultPadding,
           right: AppsConfig.defaultPadding / 2),
-      child: Icon(Icons.search, color: ColorTheme.primary),
+      child: Icon(Icons.search, color: ColorTheme.primary.withOpacity(0.5)),
     ),
     border: OutlineInputBorder(
       borderSide: BorderSide.none,
