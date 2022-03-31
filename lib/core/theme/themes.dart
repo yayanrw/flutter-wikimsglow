@@ -6,7 +6,7 @@ import 'package:wikimsglow/core/theme/text_selection_theme.dart';
 
 ThemeData themes() {
   return ThemeData(
-      scaffoldBackgroundColor: Colors.white,
+      scaffoldBackgroundColor: ColorTheme.textWhiteGrey,
       primaryColor: ColorTheme.primary,
       highlightColor: ColorTheme.primarySmooth,
       textSelectionTheme: textSelectionThemeData(),
