@@ -11,30 +11,36 @@ class CategoryList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-        vertical: AppsConfig.defaultPadding / 2,
-      ),
-      child: SizedBox(
-        height: 84,
-        child: ListView.separated(
+    return SizedBox(
+      height: 100,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(
+          vertical: AppsConfig.defaultPadding / 2,
+        ),
+        child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(
+              parent: AlwaysScrollableScrollPhysics()),
           scrollDirection: Axis.horizontal,
-          itemCount: demoCategories.length,
-          itemBuilder: (context, index) {
-            bool isFirstIndex = index == 0;
-            bool isLastIndex = index == demoCategories.length - 1;
+          child: ListView.separated(
+            shrinkWrap: true,
+            scrollDirection: Axis.horizontal,
+            itemCount: demoCategories.length,
+            separatorBuilder: (context, index) =>
+                const SizedBox(width: AppsConfig.defaultPadding / 2),
+            itemBuilder: (context, index) {
+              bool isFirstIndex = index == 0;
+              bool isLastIndex = index == demoCategories.length - 1;
 
-            return CategoryCard(
-              icon: demoCategories[index].icon,
-              title: demoCategories[index].title,
-              press: () =>
-                  Navigator.pushNamed(context, UnderDevelopment.routeName),
-              isFirstIndex: isFirstIndex,
-              isLastIndex: isLastIndex,
-            );
-          },
-          separatorBuilder: (context, index) =>
-              const SizedBox(width: AppsConfig.defaultPadding / 2),
+              return CategoryCard(
+                icon: demoCategories[index].icon,
+                title: demoCategories[index].title,
+                press: () =>
+                    Navigator.pushNamed(context, UnderDevelopment.routeName),
+                isFirstIndex: isFirstIndex,
+                isLastIndex: isLastIndex,
+              );
+            },
+          ),
         ),
       ),
     );
