@@ -21,4 +21,9 @@ class Strings {
   static const msglow = 'msglow';
   static const categories = 'Categories';
   static const ourProducts = 'Our Products';
+  static const explore = 'Explore\n';
+  static const ourSkinCare = 'Our skin care just for you';
+  static const letsExplore = 'Let\'s explore our products';
+  static const newArrivals = 'New Arrivals';
+  static const bestSellers = 'Best Sellers';
 }
