@@ -23,3 +23,18 @@ List<Product> demoNewArrivals = [
     title: "Noctis Natural Deodorant",
   ),
 ];
+
+List<Product> demoBestSellers = [
+  Product(
+    image: "assets/images/Terra.jpg",
+    title: "Terra Natural Deodorant",
+  ),
+  Product(
+    image: "assets/images/Silva.jpg",
+    title: "Silva Natural Deodorant",
+  ),
+  Product(
+    image: "assets/images/Noctis.jpg",
+    title: "Noctis Natural Deodorant",
+  ),
+];
