@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wikimsglow/core/config/apps_config.dart';
 import 'package:wikimsglow/features/home/domain/entities/product.dart';
-import 'package:wikimsglow/features/others/presentation/pages/under_development.dart';
-
+import 'package:wikimsglow/features/home/presentation/pages/product_detail_page.dart';
 import 'product_card.dart';
 
 class BestSellerList extends StatelessWidget {
@@ -34,8 +33,9 @@ class BestSellerList extends StatelessWidget {
                 return ProductCard(
                   title: demoBestSellers[index].title,
                   image: demoBestSellers[index].image,
-                  press: () =>
-                      Navigator.pushNamed(context, UnderDevelopment.routeName),
+                  press: () => Navigator.pushNamed(
+                      context, ProductDetailPage.routeName,
+                      arguments: demoNewArrivals[index]),
                   isFirstIndex: isFirstIndex,
                   isLastIndex: isLastIndex,
                 );
