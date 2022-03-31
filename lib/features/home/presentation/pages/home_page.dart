@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:wikimsglow/core/theme/color_themes.dart';
+import 'package:wikimsglow/core/utils/menu_state.dart';
 import 'package:wikimsglow/core/utils/strings.dart';
+import 'package:wikimsglow/core/widgets/menu/custom_botttom_navbar.dart';
 import 'package:wikimsglow/core/widgets/text/section_title.dart';
 import 'package:wikimsglow/features/home/presentation/widgets/best_seller_list.dart';
 import 'package:wikimsglow/features/home/presentation/widgets/category_list.dart';
@@ -68,6 +70,8 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
+      bottomNavigationBar:
+          const CustomBottomNavBar(selectedMenu: MenuState.home),
     );
   }
 }
