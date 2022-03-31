@@ -18,27 +18,32 @@ class SectionTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(AppsConfig.defaultPadding,
-          AppsConfig.defaultPadding / 2, AppsConfig.defaultPadding, 0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: [
-          Text(
-            text,
-            style: textThemes(ColorTheme.secondary, FontWeight.w700).headline6,
-          ),
-          Visibility(
-            visible: isMoreable,
-            child: GestureDetector(
-                onTap: press,
-                child: Text(
-                  Strings.seeMore,
-                  style: textThemes(ColorTheme.primary).caption,
-                )),
-          )
-        ],
+    return Container(
+      color: ColorTheme.white,
+      width: double.infinity,
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(AppsConfig.defaultPadding,
+            AppsConfig.defaultPadding / 2, AppsConfig.defaultPadding, 0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Text(
+              text,
+              style:
+                  textThemes(ColorTheme.secondary, FontWeight.w700).headline6,
+            ),
+            Visibility(
+              visible: isMoreable,
+              child: GestureDetector(
+                  onTap: press,
+                  child: Text(
+                    Strings.seeMore,
+                    style: textThemes(ColorTheme.primary).caption,
+                  )),
+            )
+          ],
+        ),
       ),
     );
   }
