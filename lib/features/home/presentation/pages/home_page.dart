@@ -4,6 +4,7 @@ import 'package:wikimsglow/core/widgets/text/section_title.dart';
 import 'package:wikimsglow/features/home/presentation/widgets/category_list.dart';
 import 'package:wikimsglow/features/home/presentation/widgets/home_page_appbar.dart';
 import 'package:wikimsglow/features/home/presentation/widgets/explore_text.dart';
+import 'package:wikimsglow/features/home/presentation/widgets/new_arrival_list.dart';
 import 'package:wikimsglow/features/home/presentation/widgets/search_text_form_field.dart';
 import 'package:wikimsglow/features/others/presentation/pages/under_development.dart';
 
@@ -32,6 +33,17 @@ class HomePage extends StatelessWidget {
                     Navigator.pushNamed(context, UnderDevelopment.routeName),
               ),
               const CategoryList(),
+              SectionTitle(
+                text: Strings.newArrivals,
+                isMoreable: false,
+                press: () => {},
+              ),
+              NewArrivalList(),
+              SectionTitle(
+                text: Strings.bestSellers,
+                isMoreable: false,
+                press: () => {},
+              ),
               SectionTitle(
                 text: Strings.ourProducts,
                 isMoreable: false,
