@@ -26,4 +26,5 @@ class Strings {
   static const letsExplore = 'Let\'s explore our products';
   static const newArrivals = 'New Arrivals';
   static const bestSellers = 'Best Sellers';
+  static const seeMore = 'See more';
 }

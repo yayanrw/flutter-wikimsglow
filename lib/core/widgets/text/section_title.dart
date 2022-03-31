@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:wikimsglow/core/config/apps_config.dart';
 import 'package:wikimsglow/core/theme/color_themes.dart';
 import 'package:wikimsglow/core/theme/text_themes.dart';
+import 'package:wikimsglow/core/utils/strings.dart';
 
 class SectionTitle extends StatelessWidget {
   const SectionTitle({
@@ -33,8 +34,8 @@ class SectionTitle extends StatelessWidget {
             child: GestureDetector(
                 onTap: press,
                 child: Text(
-                  'See more',
-                  style: textThemes(ColorTheme.textGrey).caption,
+                  Strings.seeMore,
+                  style: textThemes(ColorTheme.primary).caption,
                 )),
           )
         ],
