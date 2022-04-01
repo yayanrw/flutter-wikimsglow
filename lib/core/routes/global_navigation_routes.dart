@@ -6,11 +6,12 @@ import 'package:wikimsglow/features/login/presentation/pages/login_page.dart';
 import 'package:wikimsglow/features/others/presentation/pages/not_found.dart';
 import 'package:wikimsglow/features/others/presentation/pages/under_development.dart';
 
-class NavigationRoutes {
-  static final NavigationRoutes _instance = NavigationRoutes._init();
-  static NavigationRoutes get instance => _instance;
+class GlobalNavigationRoutes {
+  static final GlobalNavigationRoutes _instance =
+      GlobalNavigationRoutes._init();
+  static GlobalNavigationRoutes get instance => _instance;
 
-  NavigationRoutes._init();
+  GlobalNavigationRoutes._init();
 
   Route<dynamic> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -34,10 +35,5 @@ class NavigationRoutes {
       default:
         return MaterialPageRoute(builder: (_) => const NotFound());
     }
-  }
-
-  MaterialPageRoute normalNavigate(Widget widget, String pageName) {
-    return MaterialPageRoute(
-        builder: (context) => widget, settings: RouteSettings(name: pageName));
   }
 }

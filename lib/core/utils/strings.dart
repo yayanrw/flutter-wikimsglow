@@ -29,4 +29,8 @@ class Strings {
   static const seeMore = 'See more';
   static const emailDummy = 'you@email.com';
   static const passwordDummy = '********';
+  static const home = 'Home';
+  static const category = 'Category';
+  static const favourite = 'Favoutite';
+  static const profile = 'Profile';
 }

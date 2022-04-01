@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:wikimsglow/core/config/apps_config.dart';
 import 'package:wikimsglow/core/theme/color_themes.dart';
-import 'package:wikimsglow/core/utils/menu_state.dart';
 import 'package:wikimsglow/core/utils/strings.dart';
-import 'package:wikimsglow/core/widgets/menu/custom_botttom_navbar.dart';
 import 'package:wikimsglow/core/widgets/text/section_title.dart';
 import 'package:wikimsglow/features/home/presentation/widgets/best_seller_list.dart';
 import 'package:wikimsglow/features/home/presentation/widgets/category_list.dart';
@@ -30,18 +29,28 @@ class HomePage extends StatelessWidget {
             children: [
               exploreText(),
               searchTextFormField(),
-              SectionTitle(
-                text: Strings.categories,
-                isMoreable: true,
-                press: () =>
-                    Navigator.pushNamed(context, UnderDevelopment.routeName),
+              Container(
+                height: 50,
+                color: ColorTheme.textWhiteGrey,
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: ColorTheme.white,
+                      borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(AppsConfig.defaultRadius * 2),
+                        topRight: Radius.circular(AppsConfig.defaultRadius * 2),
+                      )),
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 16),
+                    child: SectionTitle(
+                      text: Strings.categories,
+                      isMoreable: true,
+                      press: () => Navigator.pushNamed(
+                          context, UnderDevelopment.routeName),
+                    ),
+                  ),
+                ),
               ),
               const CategoryList(),
-              Divider(
-                color: ColorTheme.textWhiteGrey,
-                thickness: 8,
-                height: 24,
-              ),
               SectionTitle(
                 text: Strings.newArrivals,
                 isMoreable: false,
@@ -54,24 +63,23 @@ class HomePage extends StatelessWidget {
                 press: () => {},
               ),
               const BestSellerList(),
-              Divider(
-                color: ColorTheme.textWhiteGrey,
-                thickness: 8,
-                height: 24,
-              ),
               SectionTitle(
                 text: Strings.ourProducts,
                 isMoreable: false,
                 press: () => {},
               ),
               const BestSellerList(),
-              const SizedBox(height: 50),
+              SizedBox(
+                height: 50,
+                child: Container(
+                  color: ColorTheme.white,
+                  width: double.infinity,
+                ),
+              ),
             ],
           ),
         ),
       ),
-      bottomNavigationBar:
-          const CustomBottomNavBar(selectedMenu: MenuState.home),
     );
   }
 }
