@@ -19,6 +19,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: appBarHome(),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(
@@ -27,6 +28,7 @@ class HomePage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const SizedBox(height: 110),
               exploreText(),
               searchTextFormField(),
               Container(
