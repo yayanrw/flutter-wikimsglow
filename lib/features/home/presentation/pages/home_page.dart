@@ -28,12 +28,20 @@ class HomePage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 110),
-              exploreText(),
-              searchTextFormField(),
+              const SizedBox(height: 105),
               Container(
-                height: 50,
-                color: ColorTheme.textWhiteGrey,
+                  color: ColorTheme.bgScaffoldBackground,
+                  width: double.infinity,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      exploreText(),
+                      searchTextFormField(),
+                    ],
+                  )),
+              Container(
+                height: 20,
+                color: ColorTheme.bgScaffoldBackground,
                 child: Container(
                   decoration: BoxDecoration(
                       color: ColorTheme.white,
@@ -41,43 +49,44 @@ class HomePage extends StatelessWidget {
                         topLeft: Radius.circular(AppsConfig.defaultRadius * 2),
                         topRight: Radius.circular(AppsConfig.defaultRadius * 2),
                       )),
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 16),
-                    child: SectionTitle(
+                ),
+              ),
+              Container(
+                color: ColorTheme.white,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SectionTitle(
                       text: Strings.categories,
                       isMoreable: true,
                       press: () => Navigator.pushNamed(
                           context, UnderDevelopment.routeName),
                     ),
-                  ),
+                    const CategoryList(),
+                    SectionTitle(
+                      text: Strings.newArrivals,
+                      isMoreable: false,
+                      press: () => {},
+                    ),
+                    const NewArrivalList(),
+                    SectionTitle(
+                      text: Strings.bestSellers,
+                      isMoreable: false,
+                      press: () => {},
+                    ),
+                    const BestSellerList(),
+                    SectionTitle(
+                      text: Strings.ourProducts,
+                      isMoreable: false,
+                      press: () => {},
+                    ),
+                    const BestSellerList(),
+                    const SizedBox(
+                      height: 50,
+                    ),
+                  ],
                 ),
-              ),
-              const CategoryList(),
-              SectionTitle(
-                text: Strings.newArrivals,
-                isMoreable: false,
-                press: () => {},
-              ),
-              const NewArrivalList(),
-              SectionTitle(
-                text: Strings.bestSellers,
-                isMoreable: false,
-                press: () => {},
-              ),
-              const BestSellerList(),
-              SectionTitle(
-                text: Strings.ourProducts,
-                isMoreable: false,
-                press: () => {},
-              ),
-              const BestSellerList(),
-              SizedBox(
-                height: 50,
-                child: Container(
-                  color: ColorTheme.white,
-                  width: double.infinity,
-                ),
-              ),
+              )
             ],
           ),
         ),
