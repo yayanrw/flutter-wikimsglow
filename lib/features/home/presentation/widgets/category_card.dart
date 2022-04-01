@@ -33,6 +33,8 @@ class CategoryCard extends StatelessWidget {
                     borderRadius:
                         BorderRadius.circular(AppsConfig.defaultRadius),
                     side: BorderSide(color: ColorTheme.primary))),
+            overlayColor:
+                MaterialStateProperty.all(ColorTheme.primary.withOpacity(0.3)),
             backgroundColor: MaterialStateProperty.all(
                 ColorTheme.primarySmooth.withOpacity(0.5))),
         child: Padding(
