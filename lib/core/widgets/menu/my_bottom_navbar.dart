@@ -10,6 +10,8 @@ import 'package:wikimsglow/core/widgets/navigator/profile_navigator.dart';
 class MyBottomNavbar extends StatefulWidget {
   const MyBottomNavbar({Key? key}) : super(key: key);
 
+  static const routeName = '/my_bottom_navbar';
+
   @override
   State<MyBottomNavbar> createState() => _MyBottomNavbarState();
 }

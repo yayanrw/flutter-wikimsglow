@@ -3,7 +3,7 @@ import 'package:wikimsglow/core/theme/color_themes.dart';
 import 'package:wikimsglow/core/theme/input_decoration_theme.dart';
 import 'package:wikimsglow/core/utils/strings.dart';
 import 'package:wikimsglow/core/widgets/button/primary_button.dart';
-import 'package:wikimsglow/features/home/presentation/pages/home_page.dart';
+import 'package:wikimsglow/core/widgets/menu/my_bottom_navbar.dart';
 import 'package:wikimsglow/features/login/presentation/widgets/dont_have_account.dart';
 import 'package:wikimsglow/features/login/presentation/widgets/forgot_password.dart';
 import 'package:wikimsglow/features/login/presentation/widgets/login_text.dart';
@@ -92,7 +92,7 @@ class _LoginPageState extends State<LoginPage> {
       textColor: Colors.white,
       onPressed: () {
         if (_formKey.currentState!.validate()) {
-          Navigator.pushNamed(context, HomePage.routeName);
+          Navigator.pushNamed(context, MyBottomNavbar.routeName);
         }
       },
     );

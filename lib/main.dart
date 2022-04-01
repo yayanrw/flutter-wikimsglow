@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:wikimsglow/core/config/apps_config.dart';
+import 'package:wikimsglow/core/routes/global_navigation_routes.dart';
 import 'package:wikimsglow/core/theme/themes.dart';
-import 'package:wikimsglow/core/widgets/menu/my_bottom_navbar.dart';
+import 'package:wikimsglow/features/login/presentation/pages/login_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: AppsConfig.appTitle,
         theme: themes(),
-        home: const MyBottomNavbar());
+        home: const LoginPage(),
+        onGenerateRoute: GlobalNavigationRoutes.instance.onGenerateRoute);
   }
 }
