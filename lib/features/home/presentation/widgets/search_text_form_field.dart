@@ -10,6 +10,7 @@ Widget searchTextFormField() {
     child: Padding(
       padding: const EdgeInsets.all(AppsConfig.defaultPadding),
       child: TextFormField(
+        textInputAction: TextInputAction.search,
         decoration: searchInputDecoration(),
       ),
     ),
