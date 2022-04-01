@@ -18,6 +18,19 @@ class MyBottomNavbar extends StatefulWidget {
 
 class _MyBottomNavbarState extends State<MyBottomNavbar> {
   int _currentIndex = 0;
+  PageController? _pageController;
+
+  @override
+  void initState() {
+    super.initState();
+    _pageController = PageController();
+  }
+
+  @override
+  void dispose() {
+    _pageController?.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -62,12 +75,18 @@ class _MyBottomNavbarState extends State<MyBottomNavbar> {
           onTap: (int index) {
             setState(() {
               _currentIndex = index;
+              _pageController!.animateToPage(index,
+                  duration: const Duration(milliseconds: 300),
+                  curve: Curves.easeOut);
             });
           }),
       body: SafeArea(
         top: false,
-        child: IndexedStack(
-          index: _currentIndex,
+        child: PageView(
+          controller: _pageController,
+          onPageChanged: (index) {
+            setState(() => _currentIndex = index);
+          },
           children: const [
             HomeNavigator(),
             CategoryNavigator(),
