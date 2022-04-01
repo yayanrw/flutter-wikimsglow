@@ -35,51 +35,64 @@ class _MyBottomNavbarState extends State<MyBottomNavbar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-          showSelectedLabels: false,
-          showUnselectedLabels: false,
-          type: BottomNavigationBarType.fixed,
-          items: [
-            BottomNavigationBarItem(
-              label: Strings.home,
-              icon: Icon(
-                _currentIndex == 0 ? IconlyBold.home : IconlyBroken.home,
-                color: ColorTheme.primary,
-              ),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                _currentIndex == 1
-                    ? IconlyBold.category
-                    : IconlyBroken.category,
-                color: ColorTheme.primary,
-              ),
-              label: Strings.category,
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                _currentIndex == 2 ? IconlyBold.heart : IconlyBroken.heart,
-                color: ColorTheme.primary,
-              ),
-              label: Strings.favourite,
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                _currentIndex == 3 ? IconlyBold.profile : IconlyBroken.profile,
-                color: ColorTheme.primary,
-              ),
-              label: Strings.profile,
+      bottomNavigationBar: Container(
+        decoration: const BoxDecoration(
+          boxShadow: <BoxShadow>[
+            BoxShadow(
+              color: Colors.black,
+              blurRadius: 10,
+              spreadRadius: -5,
             ),
           ],
-          currentIndex: _currentIndex,
-          onTap: (int index) {
-            setState(() {
-              _currentIndex = index;
-              _pageController!.animateToPage(index,
-                  duration: const Duration(milliseconds: 300),
-                  curve: Curves.easeOut);
-            });
-          }),
+        ),
+        child: BottomNavigationBar(
+            showSelectedLabels: false,
+            showUnselectedLabels: false,
+            type: BottomNavigationBarType.fixed,
+            items: [
+              BottomNavigationBarItem(
+                label: Strings.home,
+                icon: Icon(
+                  _currentIndex == 0 ? IconlyBold.home : IconlyBroken.home,
+                  color: ColorTheme.primary,
+                ),
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(
+                  _currentIndex == 1
+                      ? IconlyBold.category
+                      : IconlyBroken.category,
+                  color: ColorTheme.primary,
+                ),
+                label: Strings.category,
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(
+                  _currentIndex == 2 ? IconlyBold.heart : IconlyBroken.heart,
+                  color: ColorTheme.primary,
+                ),
+                label: Strings.favourite,
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(
+                  _currentIndex == 3
+                      ? IconlyBold.profile
+                      : IconlyBroken.profile,
+                  color: ColorTheme.primary,
+                ),
+                label: Strings.profile,
+              ),
+            ],
+            currentIndex: _currentIndex,
+            onTap: (int index) {
+              setState(() {
+                _currentIndex = index;
+                _pageController!.animateToPage(index,
+                    duration: const Duration(milliseconds: 300),
+                    curve: Curves.easeOut);
+              });
+            }),
+      ),
       body: SafeArea(
         top: false,
         child: PageView(
