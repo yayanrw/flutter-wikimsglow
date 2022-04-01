@@ -97,6 +97,7 @@ class _MyBottomNavbarState extends State<MyBottomNavbar> {
         top: false,
         child: PageView(
           controller: _pageController,
+          physics: const NeverScrollableScrollPhysics(),
           onPageChanged: (index) {
             setState(() => _currentIndex = index);
           },
