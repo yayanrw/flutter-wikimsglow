@@ -4,8 +4,8 @@ import 'package:wikimsglow/features/favourite/presentation/pages/favourite_page.
 import 'package:wikimsglow/features/home/presentation/pages/home_page.dart';
 import 'package:wikimsglow/features/login/presentation/pages/login_page.dart';
 import 'package:wikimsglow/features/others/presentation/pages/my_layout.dart';
-import 'package:wikimsglow/features/others/presentation/pages/not_found.dart';
-import 'package:wikimsglow/features/others/presentation/pages/under_development.dart';
+import 'package:wikimsglow/features/others/presentation/pages/not_found_page.dart';
+import 'package:wikimsglow/features/others/presentation/pages/under_development_page.dart';
 import 'package:wikimsglow/features/profile/presentation/pages/profile_page.dart';
 
 @MaterialAutoRouter(
@@ -18,13 +18,13 @@ import 'package:wikimsglow/features/profile/presentation/pages/profile_page.dart
     ),
     AutoRoute(
       path: '/under-development',
-      page: UnderDevelopment,
+      page: UnderDevelopmentPage,
     ),
     AutoRoute(
       path: '/not-found',
-      page: NotFound,
+      page: NotFoundPage,
     ),
-    AutoRoute(path: '/my-layout', page: MyLayout, children: [
+    AutoRoute(path: '/my-layout', page: MyLayoutPage, children: [
       AutoRoute(
           path: 'home',
           name: 'HomeRouter',

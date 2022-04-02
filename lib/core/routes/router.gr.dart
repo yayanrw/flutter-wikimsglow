@@ -18,8 +18,9 @@ import '../../features/favourite/presentation/pages/favourite_page.dart' as _i8;
 import '../../features/home/presentation/pages/home_page.dart' as _i6;
 import '../../features/login/presentation/pages/login_page.dart' as _i1;
 import '../../features/others/presentation/pages/my_layout.dart' as _i4;
-import '../../features/others/presentation/pages/not_found.dart' as _i3;
-import '../../features/others/presentation/pages/under_development.dart' as _i2;
+import '../../features/others/presentation/pages/not_found_page.dart' as _i3;
+import '../../features/others/presentation/pages/under_development_page.dart'
+    as _i2;
 import '../../features/profile/presentation/pages/profile_page.dart' as _i9;
 
 class AppRouter extends _i5.RootStackRouter {
@@ -32,17 +33,17 @@ class AppRouter extends _i5.RootStackRouter {
       return _i5.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i1.LoginPage());
     },
-    UnderDevelopment.name: (routeData) {
+    UnderDevelopmentRoute.name: (routeData) {
       return _i5.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i2.UnderDevelopment());
+          routeData: routeData, child: const _i2.UnderDevelopmentPage());
     },
-    NotFound.name: (routeData) {
+    NotFoundRoute.name: (routeData) {
       return _i5.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i3.NotFound());
+          routeData: routeData, child: const _i3.NotFoundPage());
     },
-    MyLayout.name: (routeData) {
+    MyLayoutRoute.name: (routeData) {
       return _i5.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i4.MyLayout());
+          routeData: routeData, child: const _i4.MyLayoutPage());
     },
     HomeRouter.name: (routeData) {
       return _i5.MaterialPageX<dynamic>(
@@ -81,33 +82,33 @@ class AppRouter extends _i5.RootStackRouter {
   @override
   List<_i5.RouteConfig> get routes => [
         _i5.RouteConfig(LoginRoute.name, path: '/'),
-        _i5.RouteConfig(UnderDevelopment.name, path: '/under-development'),
-        _i5.RouteConfig(NotFound.name, path: '/not-found'),
-        _i5.RouteConfig(MyLayout.name, path: '/my-layout', children: [
+        _i5.RouteConfig(UnderDevelopmentRoute.name, path: '/under-development'),
+        _i5.RouteConfig(NotFoundRoute.name, path: '/not-found'),
+        _i5.RouteConfig(MyLayoutRoute.name, path: '/my-layout', children: [
           _i5.RouteConfig(HomeRouter.name,
               path: 'home',
-              parent: MyLayout.name,
+              parent: MyLayoutRoute.name,
               children: [
                 _i5.RouteConfig(HomeRoute.name,
                     path: '', parent: HomeRouter.name)
               ]),
           _i5.RouteConfig(CategoryRouter.name,
               path: 'category',
-              parent: MyLayout.name,
+              parent: MyLayoutRoute.name,
               children: [
                 _i5.RouteConfig(CategoryRoute.name,
                     path: '', parent: CategoryRouter.name)
               ]),
           _i5.RouteConfig(FavouriteRouter.name,
               path: 'home',
-              parent: MyLayout.name,
+              parent: MyLayoutRoute.name,
               children: [
                 _i5.RouteConfig(FavouriteRoute.name,
                     path: '', parent: FavouriteRouter.name)
               ]),
           _i5.RouteConfig(ProfileRouter.name,
               path: 'home',
-              parent: MyLayout.name,
+              parent: MyLayoutRoute.name,
               children: [
                 _i5.RouteConfig(ProfileRoute.name,
                     path: '', parent: ProfileRouter.name)
@@ -125,29 +126,30 @@ class LoginRoute extends _i5.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i2.UnderDevelopment]
-class UnderDevelopment extends _i5.PageRouteInfo<void> {
-  const UnderDevelopment()
-      : super(UnderDevelopment.name, path: '/under-development');
+/// [_i2.UnderDevelopmentPage]
+class UnderDevelopmentRoute extends _i5.PageRouteInfo<void> {
+  const UnderDevelopmentRoute()
+      : super(UnderDevelopmentRoute.name, path: '/under-development');
 
-  static const String name = 'UnderDevelopment';
+  static const String name = 'UnderDevelopmentRoute';
 }
 
 /// generated route for
-/// [_i3.NotFound]
-class NotFound extends _i5.PageRouteInfo<void> {
-  const NotFound() : super(NotFound.name, path: '/not-found');
+/// [_i3.NotFoundPage]
+class NotFoundRoute extends _i5.PageRouteInfo<void> {
+  const NotFoundRoute() : super(NotFoundRoute.name, path: '/not-found');
 
-  static const String name = 'NotFound';
+  static const String name = 'NotFoundRoute';
 }
 
 /// generated route for
-/// [_i4.MyLayout]
-class MyLayout extends _i5.PageRouteInfo<void> {
-  const MyLayout({List<_i5.PageRouteInfo>? children})
-      : super(MyLayout.name, path: '/my-layout', initialChildren: children);
+/// [_i4.MyLayoutPage]
+class MyLayoutRoute extends _i5.PageRouteInfo<void> {
+  const MyLayoutRoute({List<_i5.PageRouteInfo>? children})
+      : super(MyLayoutRoute.name,
+            path: '/my-layout', initialChildren: children);
 
-  static const String name = 'MyLayout';
+  static const String name = 'MyLayoutRoute';
 }
 
 /// generated route for
