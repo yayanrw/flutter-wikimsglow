@@ -1,25 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:wikimsglow/core/config/apps_config.dart';
-import 'package:wikimsglow/core/routes/global_navigation_routes.dart';
-import 'package:wikimsglow/core/routes/route_observer.dart';
+import 'package:wikimsglow/core/routes/router.gr.dart';
 import 'package:wikimsglow/core/theme/themes.dart';
-import 'package:wikimsglow/features/login/presentation/pages/login_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(AppWidget());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class AppWidget extends StatelessWidget {
+  AppWidget({Key? key}) : super(key: key);
+  final _appRouter = AppRouter();
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        title: AppsConfig.appTitle,
-        theme: themes(),
-        home: const LoginPage(),
-        navigatorObservers: [routeObserver],
-        onGenerateRoute: GlobalNavigationRoutes.instance.onGenerateRoute);
+    return MaterialApp.router(
+      title: AppsConfig.appTitle,
+      theme: themes(),
+      routerDelegate: _appRouter.delegate(),
+      routeInformationParser: _appRouter.defaultRouteParser(),
+    );
   }
 }
