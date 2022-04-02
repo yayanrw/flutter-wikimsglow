@@ -20,6 +20,13 @@ class _MyBottomNavbarState extends State<MyBottomNavbar> {
   int _currentIndex = 0;
   PageController? _pageController;
 
+  final _appFlow = [
+    const HomeNavigator(),
+    const CategoryNavigator(),
+    const FavouriteNavigator(),
+    const ProfileNavigator(),
+  ];
+
   @override
   void initState() {
     super.initState();
@@ -101,12 +108,7 @@ class _MyBottomNavbarState extends State<MyBottomNavbar> {
           onPageChanged: (index) {
             setState(() => _currentIndex = index);
           },
-          children: const [
-            HomeNavigator(),
-            CategoryNavigator(),
-            FavouriteNavigator(),
-            ProfileNavigator()
-          ],
+          children: _appFlow,
         ),
       ),
     );

@@ -6,26 +6,24 @@ import 'package:wikimsglow/features/others/presentation/pages/not_found.dart';
 import 'package:wikimsglow/features/others/presentation/pages/under_development.dart';
 
 class HomeNavigationRoutes {
-  static final HomeNavigationRoutes _instance = HomeNavigationRoutes._init();
-  static HomeNavigationRoutes get instance => _instance;
+  HomeNavigationRoutes(BuildContext? context);
 
-  HomeNavigationRoutes._init();
-
-  Route<dynamic> onGenerateRoute(RouteSettings settings) {
-    switch (settings.name) {
+  Route<dynamic> onGenerateRoute(RouteSettings? settings) {
+    switch (settings!.name) {
       case '/':
-        return MaterialPageRoute(builder: (_) => const HomePage());
+        return MaterialPageRoute(builder: (context) => const HomePage());
 
       case ProductDetailPage.routeName:
         return MaterialPageRoute(
-            builder: (_) =>
+            builder: (context) =>
                 ProductDetailPage(product: settings.arguments as Product));
 
       case UnderDevelopment.routeName:
-        return MaterialPageRoute(builder: (_) => const UnderDevelopment());
+        return MaterialPageRoute(
+            builder: (context) => const UnderDevelopment());
 
       default:
-        return MaterialPageRoute(builder: (_) => const NotFound());
+        return MaterialPageRoute(builder: (context) => const NotFound());
     }
   }
 }

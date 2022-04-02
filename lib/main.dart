@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wikimsglow/core/config/apps_config.dart';
 import 'package:wikimsglow/core/routes/global_navigation_routes.dart';
+import 'package:wikimsglow/core/routes/route_observer.dart';
 import 'package:wikimsglow/core/theme/themes.dart';
 import 'package:wikimsglow/features/login/presentation/pages/login_page.dart';
 
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
         title: AppsConfig.appTitle,
         theme: themes(),
         home: const LoginPage(),
+        navigatorObservers: [routeObserver],
         onGenerateRoute: GlobalNavigationRoutes.instance.onGenerateRoute);
   }
 }

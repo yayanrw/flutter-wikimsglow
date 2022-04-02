@@ -7,7 +7,7 @@ class HomeNavigator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Navigator(
-      onGenerateRoute: HomeNavigationRoutes.instance.onGenerateRoute,
+      onGenerateRoute: HomeNavigationRoutes(context).onGenerateRoute,
     );
   }
 }
