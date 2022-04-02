@@ -19,7 +19,7 @@ import '../../features/home/domain/entities/product.dart' as _i12;
 import '../../features/home/presentation/pages/home_page.dart' as _i6;
 import '../../features/home/presentation/pages/product_detail_page.dart' as _i7;
 import '../../features/login/presentation/pages/login_page.dart' as _i1;
-import '../../features/others/presentation/pages/my_layout.dart' as _i4;
+import '../../features/others/presentation/pages/my_layout_page.dart' as _i4;
 import '../../features/others/presentation/pages/not_found_page.dart' as _i3;
 import '../../features/others/presentation/pages/under_development_page.dart'
     as _i2;

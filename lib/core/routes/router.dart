@@ -4,7 +4,7 @@ import 'package:wikimsglow/features/favourite/presentation/pages/favourite_page.
 import 'package:wikimsglow/features/home/presentation/pages/home_page.dart';
 import 'package:wikimsglow/features/home/presentation/pages/product_detail_page.dart';
 import 'package:wikimsglow/features/login/presentation/pages/login_page.dart';
-import 'package:wikimsglow/features/others/presentation/pages/my_layout.dart';
+import 'package:wikimsglow/features/others/presentation/pages/my_layout_page.dart';
 import 'package:wikimsglow/features/others/presentation/pages/not_found_page.dart';
 import 'package:wikimsglow/features/others/presentation/pages/under_development_page.dart';
 import 'package:wikimsglow/features/profile/presentation/pages/profile_page.dart';

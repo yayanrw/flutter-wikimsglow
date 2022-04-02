@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:wikimsglow/core/routes/router.gr.dart';
 import 'package:wikimsglow/core/theme/color_themes.dart';
-
-import '../../../../core/utils/strings.dart';
+import 'package:wikimsglow/core/utils/strings.dart';
 
 class MyLayoutPage extends StatelessWidget {
   const MyLayoutPage({Key? key}) : super(key: key);
