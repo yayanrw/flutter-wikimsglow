@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-class ColorTheme {
+class MyColors {
   static Color primary = HexColor("#fc5daf");
   static Color primaryDark = HexColor("#fe0084");
   static Color primaryLight = HexColor("#fbbcde");

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:wikimsglow/core/config/apps_config.dart';
 import 'package:wikimsglow/core/theme/appbar_theme.dart';
-import 'package:wikimsglow/core/theme/color_themes.dart';
+import 'package:wikimsglow/core/theme/my_colors.dart';
 import 'package:wikimsglow/core/theme/text_selection_theme.dart';
 
-ThemeData themes() {
+ThemeData myThemes() {
   return ThemeData(
-      scaffoldBackgroundColor: ColorTheme.bgScaffoldBackground,
-      primaryColor: ColorTheme.primary,
-      highlightColor: ColorTheme.primarySmooth,
+      scaffoldBackgroundColor: MyColors.bgScaffoldBackground,
+      primaryColor: MyColors.primary,
+      highlightColor: MyColors.primarySmooth,
       textSelectionTheme: textSelectionThemeData(),
       appBarTheme: appBarTheme(),
       fontFamily: AppsConfig.fontFamily,

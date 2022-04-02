@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:wikimsglow/core/config/apps_config.dart';
-import 'package:wikimsglow/core/theme/color_themes.dart';
+import 'package:wikimsglow/core/theme/my_colors.dart';
 import 'package:wikimsglow/core/theme/text_themes.dart';
 import 'package:wikimsglow/core/utils/strings.dart';
 
 InputDecoration emailInputDecoration() {
   return InputDecoration(
     filled: true,
-    fillColor: ColorTheme.textWhiteGrey,
+    fillColor: MyColors.textWhiteGrey,
     floatingLabelBehavior: FloatingLabelBehavior.never,
     prefixIcon: Padding(
       padding: const EdgeInsets.all(6),
@@ -16,11 +16,11 @@ InputDecoration emailInputDecoration() {
         height: 10,
         width: 10,
         decoration: BoxDecoration(
-            color: ColorTheme.primarySmooth,
+            color: MyColors.primarySmooth,
             borderRadius: BorderRadius.circular(AppsConfig.defaultRadius)),
         child: Icon(
           IconlyBold.message,
-          color: ColorTheme.primary,
+          color: MyColors.primary,
         ),
       ),
     ),
@@ -40,7 +40,7 @@ InputDecoration passwordInputDecoration(
     bool _passwordVisible, VoidCallback _togglePasswordVisibility) {
   return InputDecoration(
     filled: true,
-    fillColor: ColorTheme.textWhiteGrey,
+    fillColor: MyColors.textWhiteGrey,
     floatingLabelBehavior: FloatingLabelBehavior.never,
     prefixIcon: Padding(
       padding: const EdgeInsets.all(6),
@@ -48,11 +48,11 @@ InputDecoration passwordInputDecoration(
         height: 10,
         width: 10,
         decoration: BoxDecoration(
-            color: ColorTheme.primarySmooth,
+            color: MyColors.primarySmooth,
             borderRadius: BorderRadius.circular(AppsConfig.defaultRadius)),
         child: Icon(
           IconlyBold.lock,
-          color: ColorTheme.primary,
+          color: MyColors.primary,
         ),
       ),
     ),
@@ -62,7 +62,7 @@ InputDecoration passwordInputDecoration(
     hintText: Strings.passwordDummy,
     labelText: Strings.password,
     suffixIcon: IconButton(
-      color: ColorTheme.textGrey,
+      color: MyColors.textGrey,
       padding: const EdgeInsets.only(right: AppsConfig.defaultPadding * 2),
       splashRadius: 1,
       icon: Icon(_passwordVisible
@@ -80,15 +80,15 @@ InputDecoration passwordInputDecoration(
 InputDecoration searchInputDecoration() {
   return InputDecoration(
     filled: true,
-    fillColor: ColorTheme.white,
+    fillColor: MyColors.white,
     contentPadding: const EdgeInsets.all(AppsConfig.defaultPadding),
-    hintStyle: textThemes(ColorTheme.textGrey, FontWeight.w500).bodyText1,
+    hintStyle: textThemes(MyColors.textGrey, FontWeight.w500).bodyText1,
     hintText: Strings.searchProducts,
     prefixIcon: Padding(
       padding: const EdgeInsets.only(
           left: AppsConfig.defaultPadding,
           right: AppsConfig.defaultPadding / 2),
-      child: Icon(Icons.search, color: ColorTheme.primary),
+      child: Icon(Icons.search, color: MyColors.primary),
     ),
     border: OutlineInputBorder(
       borderSide: BorderSide.none,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:wikimsglow/core/theme/color_themes.dart';
+import 'package:wikimsglow/core/theme/my_colors.dart';
 import 'package:wikimsglow/core/theme/text_themes.dart';
 import 'package:wikimsglow/core/utils/strings.dart';
 import 'package:wikimsglow/core/widgets/button/primary_button.dart';
@@ -29,13 +29,13 @@ class NotFoundPage extends StatelessWidget {
               ),
               Text(
                 Strings.notFound,
-                style: textThemes(ColorTheme.secondary).headline5,
+                style: textThemes(MyColors.secondary).headline5,
               ),
               const SizedBox(
                 height: 48,
               ),
               PrimaryButton(
-                  buttonColor: ColorTheme.primary,
+                  buttonColor: MyColors.primary,
                   textColor: Colors.white,
                   textValue: Strings.goBack,
                   onPressed: () => Navigator.pop(context))

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wikimsglow/core/config/apps_config.dart';
-import 'package:wikimsglow/core/theme/color_themes.dart';
+import 'package:wikimsglow/core/theme/my_colors.dart';
 import 'package:wikimsglow/core/theme/text_themes.dart';
 
 class CategoryCard extends StatelessWidget {
@@ -32,11 +32,11 @@ class CategoryCard extends StatelessWidget {
                 RoundedRectangleBorder(
                     borderRadius:
                         BorderRadius.circular(AppsConfig.defaultRadius),
-                    side: BorderSide(color: ColorTheme.primary))),
+                    side: BorderSide(color: MyColors.primary))),
             overlayColor:
-                MaterialStateProperty.all(ColorTheme.primary.withOpacity(0.3)),
+                MaterialStateProperty.all(MyColors.primary.withOpacity(0.3)),
             backgroundColor: MaterialStateProperty.all(
-                ColorTheme.primarySmooth.withOpacity(0.5))),
+                MyColors.primarySmooth.withOpacity(0.5))),
         child: Padding(
           padding: const EdgeInsets.all(AppsConfig.defaultPadding / 2),
           child: Column(
@@ -51,7 +51,7 @@ class CategoryCard extends StatelessWidget {
               Text(
                 title,
                 maxLines: 1,
-                style: textThemes(ColorTheme.textBlack).subtitle2,
+                style: textThemes(MyColors.textBlack).subtitle2,
               )
             ],
           ),

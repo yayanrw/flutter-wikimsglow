@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wikimsglow/core/config/apps_config.dart';
 import 'package:wikimsglow/core/routes/router.gr.dart';
-import 'package:wikimsglow/core/theme/themes.dart';
+import 'package:wikimsglow/core/theme/my_themes.dart';
 
 void main() {
   runApp(AppWidget());
@@ -16,7 +16,7 @@ class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       title: AppsConfig.appTitle,
-      theme: themes(),
+      theme: myThemes(),
       routerDelegate: _appRouter.delegate(),
       routeInformationParser: _appRouter.defaultRouteParser(),
     );

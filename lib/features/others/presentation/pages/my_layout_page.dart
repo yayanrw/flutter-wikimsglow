@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:wikimsglow/core/routes/router.gr.dart';
-import 'package:wikimsglow/core/theme/color_themes.dart';
+import 'package:wikimsglow/core/theme/my_colors.dart';
 import 'package:wikimsglow/core/utils/strings.dart';
 
 class MyLayoutPage extends StatelessWidget {
@@ -11,7 +11,7 @@ class MyLayoutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AutoTabsScaffold(
-      backgroundColor: ColorTheme.bgScaffoldBackground,
+      backgroundColor: MyColors.bgScaffoldBackground,
       routes: const [
         HomeRouter(),
         CategoryRouter(),
@@ -32,7 +32,7 @@ class MyLayoutPage extends StatelessWidget {
                   tabsRouter.activeIndex == 0
                       ? IconlyBold.home
                       : IconlyBroken.home,
-                  color: ColorTheme.primary,
+                  color: MyColors.primary,
                 ),
               ),
               BottomNavigationBarItem(
@@ -40,7 +40,7 @@ class MyLayoutPage extends StatelessWidget {
                   tabsRouter.activeIndex == 1
                       ? IconlyBold.category
                       : IconlyBroken.category,
-                  color: ColorTheme.primary,
+                  color: MyColors.primary,
                 ),
                 label: Strings.category,
               ),
@@ -49,7 +49,7 @@ class MyLayoutPage extends StatelessWidget {
                   tabsRouter.activeIndex == 2
                       ? IconlyBold.heart
                       : IconlyBroken.heart,
-                  color: ColorTheme.primary,
+                  color: MyColors.primary,
                 ),
                 label: Strings.favourite,
               ),
@@ -58,7 +58,7 @@ class MyLayoutPage extends StatelessWidget {
                   tabsRouter.activeIndex == 3
                       ? IconlyBold.profile
                       : IconlyBroken.profile,
-                  color: ColorTheme.primary,
+                  color: MyColors.primary,
                 ),
                 label: Strings.profile,
               ),

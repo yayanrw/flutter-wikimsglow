@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wikimsglow/core/config/apps_config.dart';
-import 'package:wikimsglow/core/theme/color_themes.dart';
+import 'package:wikimsglow/core/theme/my_colors.dart';
 import 'package:wikimsglow/core/theme/text_themes.dart';
 import 'package:wikimsglow/core/utils/strings.dart';
 
@@ -27,7 +27,7 @@ class SectionTitle extends StatelessWidget {
         children: [
           Text(
             text,
-            style: textThemes(ColorTheme.secondary, FontWeight.w700).headline6,
+            style: textThemes(MyColors.secondary, FontWeight.w700).headline6,
           ),
           Visibility(
             visible: isMoreable,
@@ -35,7 +35,7 @@ class SectionTitle extends StatelessWidget {
                 onTap: press,
                 child: Text(
                   Strings.seeMore,
-                  style: textThemes(ColorTheme.primary).caption,
+                  style: textThemes(MyColors.primary).caption,
                 )),
           )
         ],

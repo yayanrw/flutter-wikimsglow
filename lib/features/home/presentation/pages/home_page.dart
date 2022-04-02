@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:wikimsglow/core/config/apps_config.dart';
 import 'package:wikimsglow/core/routes/router.gr.dart';
-import 'package:wikimsglow/core/theme/color_themes.dart';
+import 'package:wikimsglow/core/theme/my_colors.dart';
 import 'package:wikimsglow/core/utils/strings.dart';
 import 'package:wikimsglow/core/widgets/text/section_title.dart';
 import 'package:wikimsglow/features/home/presentation/widgets/best_seller_list.dart';
@@ -31,7 +31,7 @@ class HomePage extends StatelessWidget {
             children: [
               const SizedBox(height: 105),
               Container(
-                  color: ColorTheme.bgScaffoldBackground,
+                  color: MyColors.bgScaffoldBackground,
                   width: double.infinity,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,10 +42,10 @@ class HomePage extends StatelessWidget {
                   )),
               Container(
                 height: 20,
-                color: ColorTheme.bgScaffoldBackground,
+                color: MyColors.bgScaffoldBackground,
                 child: Container(
                   decoration: BoxDecoration(
-                      color: ColorTheme.white,
+                      color: MyColors.white,
                       borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(AppsConfig.defaultRadius * 2),
                         topRight: Radius.circular(AppsConfig.defaultRadius * 2),
@@ -53,7 +53,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               Container(
-                color: ColorTheme.white,
+                color: MyColors.white,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

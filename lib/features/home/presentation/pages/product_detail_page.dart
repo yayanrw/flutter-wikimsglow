@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wikimsglow/core/config/apps_config.dart';
-import 'package:wikimsglow/core/theme/color_themes.dart';
+import 'package:wikimsglow/core/theme/my_colors.dart';
 import 'package:wikimsglow/core/widgets/button/primary_button.dart';
 import 'package:wikimsglow/features/home/domain/entities/product.dart';
 
@@ -61,7 +61,7 @@ class ProductDetailPage extends StatelessWidget {
                         ),
                       ),
                       PrimaryButton(
-                          buttonColor: ColorTheme.primary,
+                          buttonColor: MyColors.primary,
                           textColor: Colors.white,
                           textValue: 'Buy Now',
                           onPressed: () => Navigator.maybePop(context))

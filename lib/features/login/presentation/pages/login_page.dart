@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:wikimsglow/core/routes/router.gr.dart';
-import 'package:wikimsglow/core/theme/color_themes.dart';
+import 'package:wikimsglow/core/theme/my_colors.dart';
 import 'package:wikimsglow/core/theme/input_decoration_theme.dart';
 import 'package:wikimsglow/core/utils/strings.dart';
 import 'package:wikimsglow/core/widgets/button/primary_button.dart';
@@ -34,7 +34,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorTheme.white,
+      backgroundColor: MyColors.white,
       resizeToAvoidBottomInset: true,
       body: SafeArea(
         child: SingleChildScrollView(
@@ -88,7 +88,7 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget loginButton(BuildContext context) {
     return PrimaryButton(
-      buttonColor: ColorTheme.primary,
+      buttonColor: MyColors.primary,
       textValue: Strings.login,
       textColor: Colors.white,
       onPressed: () {
@@ -110,7 +110,7 @@ class _LoginPageState extends State<LoginPage> {
       //           : Strings.invalidEmail;
       // },
       keyboardType: TextInputType.emailAddress,
-      cursorColor: ColorTheme.primary,
+      cursorColor: MyColors.primary,
       decoration: emailInputDecoration(),
     );
   }
@@ -125,7 +125,7 @@ class _LoginPageState extends State<LoginPage> {
       //           ? null
       //           : Strings.fieldTooShort;
       // },
-      cursorColor: ColorTheme.primary,
+      cursorColor: MyColors.primary,
       obscureText: !_passwordVisible,
       decoration:
           passwordInputDecoration(_passwordVisible, _togglePasswordVisibility),
