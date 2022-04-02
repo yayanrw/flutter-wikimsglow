@@ -4,7 +4,6 @@ import 'package:wikimsglow/core/routes/router.gr.dart';
 import 'package:wikimsglow/core/theme/color_themes.dart';
 import 'package:wikimsglow/core/theme/text_themes.dart';
 import 'package:wikimsglow/core/utils/strings.dart';
-import 'package:wikimsglow/features/others/presentation/pages/under_development_page.dart';
 
 Widget dontHaveAccount(BuildContext context) {
   return Row(

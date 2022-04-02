@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:wikimsglow/core/config/apps_config.dart';
+import 'package:wikimsglow/core/routes/router.gr.dart';
 import 'package:wikimsglow/core/theme/color_themes.dart';
 import 'package:wikimsglow/core/utils/strings.dart';
 import 'package:wikimsglow/core/widgets/text/section_title.dart';
@@ -9,7 +11,6 @@ import 'package:wikimsglow/features/home/presentation/widgets/home_page_appbar.d
 import 'package:wikimsglow/features/home/presentation/widgets/explore_text.dart';
 import 'package:wikimsglow/features/home/presentation/widgets/new_arrival_list.dart';
 import 'package:wikimsglow/features/home/presentation/widgets/search_text_form_field.dart';
-import 'package:wikimsglow/features/others/presentation/pages/under_development_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -57,11 +58,10 @@ class HomePage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SectionTitle(
-                      text: Strings.categories,
-                      isMoreable: true,
-                      press: () => Navigator.pushNamed(
-                          context, UnderDevelopmentPage.routeName),
-                    ),
+                        text: Strings.categories,
+                        isMoreable: true,
+                        press: () =>
+                            context.router.push(const UnderDevelopmentRoute())),
                     const CategoryList(),
                     SectionTitle(
                       text: Strings.newArrivals,

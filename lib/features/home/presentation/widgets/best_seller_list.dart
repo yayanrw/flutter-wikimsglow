@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wikimsglow/core/config/apps_config.dart';
 import 'package:wikimsglow/core/routes/router.gr.dart';
-import 'package:wikimsglow/core/theme/color_themes.dart';
 import 'package:wikimsglow/features/home/domain/entities/product.dart';
-import 'package:wikimsglow/features/home/presentation/pages/product_detail_page.dart';
 import 'product_card.dart';
 
 class BestSellerList extends StatelessWidget {
