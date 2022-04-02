@@ -100,17 +100,6 @@ class _MyBottomNavbarState extends State<MyBottomNavbar> {
               });
             }),
       ),
-      body: SafeArea(
-        top: false,
-        child: PageView(
-          controller: _pageController,
-          physics: const NeverScrollableScrollPhysics(),
-          onPageChanged: (index) {
-            setState(() => _currentIndex = index);
-          },
-          children: _appFlow,
-        ),
-      ),
     );
   }
 }
