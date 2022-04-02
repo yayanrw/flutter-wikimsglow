@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:wikimsglow/features/category/presentation/pages/category_page.dart';
 import 'package:wikimsglow/features/favourite/presentation/pages/favourite_page.dart';
 import 'package:wikimsglow/features/home/presentation/pages/home_page.dart';
+import 'package:wikimsglow/features/home/presentation/pages/product_detail_page.dart';
 import 'package:wikimsglow/features/login/presentation/pages/login_page.dart';
 import 'package:wikimsglow/features/others/presentation/pages/my_layout.dart';
 import 'package:wikimsglow/features/others/presentation/pages/not_found_page.dart';
@@ -29,7 +30,10 @@ import 'package:wikimsglow/features/profile/presentation/pages/profile_page.dart
           path: 'home',
           name: 'HomeRouter',
           page: EmptyRouterPage,
-          children: [AutoRoute(path: '', page: HomePage)]),
+          children: [
+            AutoRoute(path: '', page: HomePage),
+            AutoRoute(path: 'product/:product', page: ProductDetailPage)
+          ]),
       AutoRoute(
           path: 'category',
           name: 'CategoryRouter',

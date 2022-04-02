@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:wikimsglow/core/config/apps_config.dart';
+import 'package:wikimsglow/core/routes/router.gr.dart';
 import 'package:wikimsglow/core/theme/color_themes.dart';
 import 'package:wikimsglow/features/home/domain/entities/product.dart';
 import 'package:wikimsglow/features/home/presentation/pages/product_detail_page.dart';
@@ -35,9 +37,8 @@ class NewArrivalList extends StatelessWidget {
                 return ProductCard(
                   title: demoNewArrivals[index].title,
                   image: demoNewArrivals[index].image,
-                  press: () => Navigator.pushNamed(
-                      context, ProductDetailPage.routeName,
-                      arguments: demoNewArrivals[index]),
+                  press: () => context.router.push(
+                      ProductDetailRoute(product: demoNewArrivals[index])),
                   isFirstIndex: isFirstIndex,
                   isLastIndex: isLastIndex,
                 );

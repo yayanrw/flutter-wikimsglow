@@ -11,20 +11,22 @@
 // ignore_for_file: type=lint
 
 import 'package:auto_route/auto_route.dart' as _i5;
-import 'package:flutter/material.dart' as _i10;
+import 'package:flutter/material.dart' as _i11;
 
-import '../../features/category/presentation/pages/category_page.dart' as _i7;
-import '../../features/favourite/presentation/pages/favourite_page.dart' as _i8;
+import '../../features/category/presentation/pages/category_page.dart' as _i8;
+import '../../features/favourite/presentation/pages/favourite_page.dart' as _i9;
+import '../../features/home/domain/entities/product.dart' as _i12;
 import '../../features/home/presentation/pages/home_page.dart' as _i6;
+import '../../features/home/presentation/pages/product_detail_page.dart' as _i7;
 import '../../features/login/presentation/pages/login_page.dart' as _i1;
 import '../../features/others/presentation/pages/my_layout.dart' as _i4;
 import '../../features/others/presentation/pages/not_found_page.dart' as _i3;
 import '../../features/others/presentation/pages/under_development_page.dart'
     as _i2;
-import '../../features/profile/presentation/pages/profile_page.dart' as _i9;
+import '../../features/profile/presentation/pages/profile_page.dart' as _i10;
 
 class AppRouter extends _i5.RootStackRouter {
-  AppRouter([_i10.GlobalKey<_i10.NavigatorState>? navigatorKey])
+  AppRouter([_i11.GlobalKey<_i11.NavigatorState>? navigatorKey])
       : super(navigatorKey);
 
   @override
@@ -65,17 +67,23 @@ class AppRouter extends _i5.RootStackRouter {
       return _i5.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i6.HomePage());
     },
+    ProductDetailRoute.name: (routeData) {
+      final args = routeData.argsAs<ProductDetailRouteArgs>();
+      return _i5.MaterialPageX<dynamic>(
+          routeData: routeData,
+          child: _i7.ProductDetailPage(key: args.key, product: args.product));
+    },
     CategoryRoute.name: (routeData) {
       return _i5.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i7.CategoryPage());
+          routeData: routeData, child: const _i8.CategoryPage());
     },
     FavouriteRoute.name: (routeData) {
       return _i5.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i8.FavouritePage());
+          routeData: routeData, child: const _i9.FavouritePage());
     },
     ProfileRoute.name: (routeData) {
       return _i5.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i9.ProfilePage());
+          routeData: routeData, child: const _i10.ProfilePage());
     }
   };
 
@@ -90,7 +98,9 @@ class AppRouter extends _i5.RootStackRouter {
               parent: MyLayoutRoute.name,
               children: [
                 _i5.RouteConfig(HomeRoute.name,
-                    path: '', parent: HomeRouter.name)
+                    path: '', parent: HomeRouter.name),
+                _i5.RouteConfig(ProductDetailRoute.name,
+                    path: 'product/:product', parent: HomeRouter.name)
               ]),
           _i5.RouteConfig(CategoryRouter.name,
               path: 'category',
@@ -197,7 +207,31 @@ class HomeRoute extends _i5.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i7.CategoryPage]
+/// [_i7.ProductDetailPage]
+class ProductDetailRoute extends _i5.PageRouteInfo<ProductDetailRouteArgs> {
+  ProductDetailRoute({_i11.Key? key, required _i12.Product product})
+      : super(ProductDetailRoute.name,
+            path: 'product/:product',
+            args: ProductDetailRouteArgs(key: key, product: product));
+
+  static const String name = 'ProductDetailRoute';
+}
+
+class ProductDetailRouteArgs {
+  const ProductDetailRouteArgs({this.key, required this.product});
+
+  final _i11.Key? key;
+
+  final _i12.Product product;
+
+  @override
+  String toString() {
+    return 'ProductDetailRouteArgs{key: $key, product: $product}';
+  }
+}
+
+/// generated route for
+/// [_i8.CategoryPage]
 class CategoryRoute extends _i5.PageRouteInfo<void> {
   const CategoryRoute() : super(CategoryRoute.name, path: '');
 
@@ -205,7 +239,7 @@ class CategoryRoute extends _i5.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i8.FavouritePage]
+/// [_i9.FavouritePage]
 class FavouriteRoute extends _i5.PageRouteInfo<void> {
   const FavouriteRoute() : super(FavouriteRoute.name, path: '');
 
@@ -213,7 +247,7 @@ class FavouriteRoute extends _i5.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i9.ProfilePage]
+/// [_i10.ProfilePage]
 class ProfileRoute extends _i5.PageRouteInfo<void> {
   const ProfileRoute() : super(ProfileRoute.name, path: '');
 
