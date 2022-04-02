@@ -6,8 +6,8 @@ import 'package:wikimsglow/core/theme/color_themes.dart';
 
 import '../../../../core/utils/strings.dart';
 
-class MyLayout extends StatelessWidget {
-  const MyLayout({Key? key}) : super(key: key);
+class MyLayoutPage extends StatelessWidget {
+  const MyLayoutPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

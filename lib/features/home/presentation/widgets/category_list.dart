@@ -3,7 +3,7 @@ import 'package:wikimsglow/core/config/apps_config.dart';
 import 'package:wikimsglow/core/theme/color_themes.dart';
 import 'package:wikimsglow/features/home/domain/entities/category.dart';
 import 'package:wikimsglow/features/home/presentation/widgets/category_card.dart';
-import 'package:wikimsglow/features/others/presentation/pages/under_development.dart';
+import 'package:wikimsglow/features/others/presentation/pages/under_development_page.dart';
 
 class CategoryList extends StatelessWidget {
   const CategoryList({
@@ -35,8 +35,8 @@ class CategoryList extends StatelessWidget {
               return CategoryCard(
                 icon: demoCategories[index].icon,
                 title: demoCategories[index].title,
-                press: () =>
-                    Navigator.pushNamed(context, UnderDevelopment.routeName),
+                press: () => Navigator.pushNamed(
+                    context, UnderDevelopmentPage.routeName),
                 isFirstIndex: isFirstIndex,
                 isLastIndex: isLastIndex,
               );

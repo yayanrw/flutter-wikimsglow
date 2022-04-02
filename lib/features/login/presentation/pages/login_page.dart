@@ -1,9 +1,10 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:wikimsglow/core/routes/router.gr.dart';
 import 'package:wikimsglow/core/theme/color_themes.dart';
 import 'package:wikimsglow/core/theme/input_decoration_theme.dart';
 import 'package:wikimsglow/core/utils/strings.dart';
 import 'package:wikimsglow/core/widgets/button/primary_button.dart';
-import 'package:wikimsglow/core/widgets/menu/my_bottom_navbar.dart';
 import 'package:wikimsglow/features/login/presentation/widgets/dont_have_account.dart';
 import 'package:wikimsglow/features/login/presentation/widgets/forgot_password.dart';
 import 'package:wikimsglow/features/login/presentation/widgets/login_text.dart';
@@ -92,7 +93,7 @@ class _LoginPageState extends State<LoginPage> {
       textColor: Colors.white,
       onPressed: () {
         if (_formKey.currentState!.validate()) {
-          Navigator.pushNamed(context, MyBottomNavbar.routeName);
+          context.router.push(const MyLayoutRoute());
         }
       },
     );

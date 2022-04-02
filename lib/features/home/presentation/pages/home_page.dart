@@ -9,7 +9,7 @@ import 'package:wikimsglow/features/home/presentation/widgets/home_page_appbar.d
 import 'package:wikimsglow/features/home/presentation/widgets/explore_text.dart';
 import 'package:wikimsglow/features/home/presentation/widgets/new_arrival_list.dart';
 import 'package:wikimsglow/features/home/presentation/widgets/search_text_form_field.dart';
-import 'package:wikimsglow/features/others/presentation/pages/under_development.dart';
+import 'package:wikimsglow/features/others/presentation/pages/under_development_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -60,7 +60,7 @@ class HomePage extends StatelessWidget {
                       text: Strings.categories,
                       isMoreable: true,
                       press: () => Navigator.pushNamed(
-                          context, UnderDevelopment.routeName),
+                          context, UnderDevelopmentPage.routeName),
                     ),
                     const CategoryList(),
                     SectionTitle(
