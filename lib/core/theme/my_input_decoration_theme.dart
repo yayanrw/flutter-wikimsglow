@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:wikimsglow/core/config/apps_config.dart';
 import 'package:wikimsglow/core/theme/my_colors.dart';
-import 'package:wikimsglow/core/theme/text_themes.dart';
+import 'package:wikimsglow/core/theme/my_text_themes.dart';
 import 'package:wikimsglow/core/utils/strings.dart';
 
 InputDecoration emailInputDecoration() {
@@ -82,7 +82,7 @@ InputDecoration searchInputDecoration() {
     filled: true,
     fillColor: MyColors.white,
     contentPadding: const EdgeInsets.all(AppsConfig.defaultPadding),
-    hintStyle: textThemes(MyColors.textGrey, FontWeight.w500).bodyText1,
+    hintStyle: myTextThemes(color: MyColors.textGrey).bodyText1,
     hintText: Strings.searchProducts,
     prefixIcon: Padding(
       padding: const EdgeInsets.only(

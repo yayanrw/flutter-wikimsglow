@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:wikimsglow/core/config/apps_config.dart';
 
-TextTheme textThemes([Color? color, FontWeight? weight]) {
+TextTheme myTextThemes({Color? color, FontWeight? weight}) {
+  color = color ?? AppsConfig.defaultTextColor;
+  weight = weight ?? FontWeight.w500;
+
   return TextTheme(
     headline1: TextStyle(
         fontSize: 93, fontWeight: weight, letterSpacing: -1.5, color: color),

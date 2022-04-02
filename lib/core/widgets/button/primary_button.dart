@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wikimsglow/core/config/apps_config.dart';
-import 'package:wikimsglow/core/theme/text_themes.dart';
+import 'package:wikimsglow/core/theme/my_text_themes.dart';
 
 class PrimaryButton extends StatelessWidget {
   final Color buttonColor;
@@ -36,7 +36,7 @@ class PrimaryButton extends StatelessWidget {
                 padding: const EdgeInsets.all(AppsConfig.defaultPadding / 2),
                 child: Text(
                   textValue,
-                  style: textThemes(textColor, FontWeight.w500).headline5,
+                  style: myTextThemes(color: textColor).headline5,
                 ),
               ),
             ),

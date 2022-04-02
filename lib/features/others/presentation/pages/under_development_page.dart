@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:wikimsglow/core/theme/my_colors.dart';
-import 'package:wikimsglow/core/theme/text_themes.dart';
+import 'package:wikimsglow/core/theme/my_text_themes.dart';
 import 'package:wikimsglow/core/utils/strings.dart';
 import 'package:wikimsglow/core/widgets/button/primary_button.dart';
 
@@ -29,7 +29,7 @@ class UnderDevelopmentPage extends StatelessWidget {
               ),
               Text(
                 Strings.underDevelopment,
-                style: textThemes(MyColors.secondary).headline5,
+                style: myTextThemes(color: MyColors.textBlack).headline5,
               ),
               const SizedBox(
                 height: 48,

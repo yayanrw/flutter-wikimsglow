@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wikimsglow/core/config/apps_config.dart';
 import 'package:wikimsglow/core/theme/my_colors.dart';
-import 'package:wikimsglow/core/theme/text_themes.dart';
+import 'package:wikimsglow/core/theme/my_text_themes.dart';
 
 class CategoryCard extends StatelessWidget {
   const CategoryCard({
@@ -51,7 +51,7 @@ class CategoryCard extends StatelessWidget {
               Text(
                 title,
                 maxLines: 1,
-                style: textThemes(MyColors.textBlack).subtitle2,
+                style: myTextThemes().subtitle2,
               )
             ],
           ),
