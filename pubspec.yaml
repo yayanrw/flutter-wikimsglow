@@ -41,6 +41,8 @@ dependencies:
   auto_route: ^3.2.4
   auto_route_generator: ^3.2.3
   build_runner: ^2.1.8
+  dartz: ^0.10.1
+  http: ^0.13.4
 
 dev_dependencies:
   flutter_test:
