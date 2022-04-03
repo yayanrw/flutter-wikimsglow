@@ -1,17 +1,18 @@
 // To parse this JSON data, do
 //
-//     final loginResponse = loginResponseFromJson(jsonString);
+//     final LoginModel = loginModelFromJson(jsonString);
 
 import 'package:equatable/equatable.dart';
 import 'dart:convert';
 
-LoginResponse loginResponseFromJson(String str) =>
-    LoginResponse.fromJson(json.decode(str));
+import 'package:wikimsglow/features/login/domain/entities/login.dart';
 
-String loginResponseToJson(LoginResponse data) => json.encode(data.toJson());
+loginModelFromJson(String str) => LoginModel.fromJson(json.decode(str));
 
-class LoginResponse extends Equatable {
-  const LoginResponse({
+String loginModelToJson(LoginModel data) => json.encode(data.toJson());
+
+class LoginModel extends Equatable {
+  const LoginModel({
     required this.status,
     required this.message,
     this.data,
@@ -21,7 +22,7 @@ class LoginResponse extends Equatable {
   final String message;
   final Data? data;
 
-  factory LoginResponse.fromJson(Map<String, dynamic> json) => LoginResponse(
+  factory LoginModel.fromJson(Map<String, dynamic> json) => LoginModel(
         status: json["status"],
         message: json["message"],
         data: Data.fromJson(json["data"]),
@@ -32,6 +33,14 @@ class LoginResponse extends Equatable {
         "message": message,
         "data": data!.toJson(),
       };
+
+  Login toEntity() {
+    return Login(
+      status: status,
+      message: message,
+      data: data,
+    );
+  }
 
   @override
   List<Object> get props => [status, message, data!];

@@ -1,11 +1,11 @@
 import 'dart:convert';
 import 'package:wikimsglow/core/config/apps_config.dart';
 import 'package:wikimsglow/core/utils/error/exceptions.dart';
-import 'package:wikimsglow/features/login/data/models/login_response.dart';
+import 'package:wikimsglow/features/login/data/models/login_model.dart';
 import 'package:http/http.dart' as http;
 
 abstract class LoginRemoteDataSource {
-  Future<LoginResponse> getLogin(String username, String password);
+  Future<LoginModel> getLogin(String username, String password);
 }
 
 class LoginRemoteDataSourceImpl implements LoginRemoteDataSource {
@@ -14,7 +14,7 @@ class LoginRemoteDataSourceImpl implements LoginRemoteDataSource {
   LoginRemoteDataSourceImpl({required this.client});
 
   @override
-  Future<LoginResponse> getLogin(String username, String password) async {
+  Future<LoginModel> getLogin(String username, String password) async {
     final response = await client.post(Uri.parse('${AppsConfig.baseUrl}/auth'),
         headers: {
           'Content-Type': 'application/json',
@@ -25,7 +25,7 @@ class LoginRemoteDataSourceImpl implements LoginRemoteDataSource {
         }));
 
     if (response.statusCode == 200) {
-      return LoginResponse.fromJson(json.decode(response.body));
+      return LoginModel.fromJson(json.decode(response.body));
     } else {
       throw ServerException();
     }
