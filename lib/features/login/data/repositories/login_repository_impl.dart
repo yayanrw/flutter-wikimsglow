@@ -7,15 +7,15 @@ import 'package:wikimsglow/features/login/domain/repositories/login_repository.d
 import 'dart:io';
 
 class LoginRepositoryImpl implements LoginRepository {
-  late final LoginRemoteDataSource _loginRemoteDataSource;
+  final LoginRemoteDataSource loginRemoteDataSource;
 
-  LoginRepositoryImpl(this._loginRemoteDataSource);
+  LoginRepositoryImpl({required this.loginRemoteDataSource});
 
   @override
   Future<Either<Failure, Login>> getLogin(
       String username, String password) async {
     try {
-      final result = await _loginRemoteDataSource.getLogin(username, password);
+      final result = await loginRemoteDataSource.getLogin(username, password);
       return Right(result.toEntity());
     } on ServerException {
       return const Left(ServerFailure(''));
