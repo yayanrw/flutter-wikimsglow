@@ -60,11 +60,6 @@ class ProductDetailPage extends StatelessWidget {
                           "A Henley shirt is a collarless pullover shirt, by a round neckline and a placket about 3 to 5 inches (8 to 13 cm) long and usually having 2–5 buttons.",
                         ),
                       ),
-                      PrimaryButton(
-                          buttonColor: MyColors.primary,
-                          textColor: Colors.white,
-                          textValue: 'Buy Now',
-                          onPressed: () => Navigator.maybePop(context))
                     ],
                   ),
                 ),

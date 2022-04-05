@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:wikimsglow/core/config/apps_config.dart';
 import 'package:wikimsglow/core/routes/router.gr.dart';
@@ -33,8 +34,8 @@ class BestSellerList extends StatelessWidget {
                 return ProductCard(
                   title: demoBestSellers[index].title,
                   image: demoBestSellers[index].image,
-                  press: () =>
-                      ProductDetailRoute(product: demoNewArrivals[index]),
+                  press: () => context.router.push(
+                      ProductDetailRoute(product: demoNewArrivals[index])),
                   isFirstIndex: isFirstIndex,
                   isLastIndex: isLastIndex,
                 );
