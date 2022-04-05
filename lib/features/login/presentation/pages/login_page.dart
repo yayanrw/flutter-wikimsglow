@@ -25,6 +25,7 @@ class _LoginPageState extends State<LoginPage> {
   bool _passwordVisible = false;
   final _email = TextEditingController();
   final _password = TextEditingController();
+
   void _togglePasswordVisibility() {
     setState(() {
       _passwordVisible = !_passwordVisible;
@@ -49,6 +50,15 @@ class _LoginPageState extends State<LoginPage> {
                     height: 32,
                   ),
                   loginText(),
+                  // Consumer<LoginNotifier>(builder: (context, value, child) {
+                  //   if (value.loginState == RequestState.loading) {
+                  //     return const Center(child: CircularProgressIndicator());
+                  //   } else if (value.loginState == RequestState.loaded) {
+                  //     return const Center(child: Text('Sudah'));
+                  //   } else {
+                  //     return Center(child: Text(value.message));
+                  //   }
+                  // }),
                   const SizedBox(
                     height: 48,
                   ),
@@ -94,6 +104,10 @@ class _LoginPageState extends State<LoginPage> {
       onPressed: () {
         if (_formKey.currentState!.validate()) {
           context.router.push(const MyLayoutRoute());
+          // Future.microtask(() {
+          //   Provider.of<LoginNotifier>(context, listen: false)
+          //       .fetchLogin(_email.text, _password.text);
+          // });
         }
       },
     );
